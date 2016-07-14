@@ -4,9 +4,24 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+//image bob effect//
+var balloon = $('.imageOne');
+function runIt() {
+    balloon.animate({top:'+=15'}, 1200);
+    balloon.animate({top:'-=15'}, 1000, runIt);
+}
+
+runIt();
+
+var balloonTwo = $('.imageTwo');
+function runItTwo() {
+    balloonTwo.animate({top:'+=15'}, 1200);
+    balloonTwo.animate({top:'-=15'}, 1000, runItTwo);
+}
+
+runItTwo();
+
 //parralax effect//
-
-
 var jumboHeight = $('.intro-body').outerHeight();
 function parallax(){
     var scrolled = $(window).scrollTop();
