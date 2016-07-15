@@ -4,6 +4,12 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
+//flip effect//
+$('.flip-container').click(function (e) {
+    $(this).toggleClass('flipped');
+});
+
 //image bob effect//
 var balloon = $('.imageOne');
 function runIt() {
