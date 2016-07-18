@@ -41,11 +41,14 @@ $(window).scroll(function(e){
 
 //jquery to get a color gradient for element with gradient id//
 var colors = new Array(
-    [232, 39, 20], //orange//
-    [91, 71, 137], //mint//
-    [148, 39, 72], //cerise//
+    // [232, 39, 20], //orange//
+    // [91, 71, 137], //mint//
+    // [148, 39, 72], //cerise//
+    [228, 210, 202],
+    [194, 202, 253],
     [228, 210, 202], //cream//
-    [24, 151, 189]); //deep aqua//
+    [100, 149, 237],
+    [228, 210, 202]); //deep aqua//
 
 var step = 0;
 //color table indices for:
@@ -79,7 +82,7 @@ function updateGradient()
     var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
     var color2 = "rgb("+r2+","+g2+","+b2+")";
 
-    $('#gradient').css({
+    $('.gradient').css({
         background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
         background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
 
