@@ -23,15 +23,32 @@
   z-index: 0;
   position: absolute;
   margin-top: 135px;
+  mix-blend-mode: hard-light;
 }
 
 /* project flip effect */
 .flip-container {
   /*margin: 50px auto;*/
 
-  /*  background: teal;*/
-  width: 200px;
-  height: 324px;
+  background: transparent;
+  width: 350px;
+  height: 566px;
+  transition: all 0.9s;
+  perspective: 900px;
+  z-index: 2;
+  overflow: hidden;
+  padding: 0px;
+  border: transparent solid 8px;
+  margin-top: 2em;
+
+}
+
+.flip-containerTwo {
+  /*margin: 50px auto;*/
+
+  background: transparent;
+  width: 350px;
+  height: 386px;
   transition: all 0.9s;
   perspective: 900px;
   z-index: 2;
@@ -51,20 +68,21 @@
   backface-visibility: hidden;
   transform-style: preserve3d;
   transition: all 0.9s;
+  margin-top: 50px;
 }
 
 .front {
-  background: black;
+  background: transparent;
 }
 
 .front img {
-  width: 210px;
+  width: 350px;
   height: auto;
   margin-left: -8px;
 }
 
 .back {
-  background: grey;
+  background: transparent;
 }
 
 .back {
@@ -96,9 +114,9 @@
 body {
   width: 100%;
   height: 100%;
-  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: mistyrose;
-  background-color: cornflowerblue;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFF;
+  background-color: #6495ed;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -131,7 +149,7 @@ p {
   }
 }
 a {
-  color: #42DCA3;
+  color: rgb(109, 239, 89);
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -139,7 +157,7 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #1d9b6c;
+  color: rgb(109, 239, 89);
 }
 .light {
   font-weight: 400;
@@ -149,11 +167,11 @@ a:focus {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: black;
+  background-color: #427AE3;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.2);
+  color: #427AE3;
+  background-color: rgba(192, 214, 255, 0.8);
   font-size: 12px;
 }
 .navbar-custom .navbar-toggle:focus,
@@ -174,8 +192,9 @@ a:focus {
   -moz-transition: background 0.3s ease-in-out;
   transition: background 0.3s ease-in-out;
 }
+
 .navbar-custom .nav li a:hover {
-  color: rgba(255, 255, 255, 0.8);
+  color: #FFF2B9;
   outline: none;
   background-color: transparent;
 }
@@ -188,10 +207,10 @@ a:focus {
   outline: none;
 }
 .navbar-custom .nav li.active a {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(109, 239, 89);
 }
 .navbar-custom .nav li.active a:hover {
-  color: white;
+  color: #6495ed;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -205,8 +224,9 @@ a:focus {
   }
   .navbar-custom.top-nav-collapse {
     padding: 0;
-    background: black;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    background: #6495ed;
+    border-bottom: 4px solid #6DEF59;
+    color: white;
   }
 }
 .intro {
@@ -216,12 +236,13 @@ a:focus {
   padding: 100px 0;
   text-align: center;
   color: white;
-  background: url(http://payload337.cargocollective.com/1/17/574234/9042457/DSC_0888.JPG) no-repeat bottom center scroll;
+  background: url(../img/cliffs_superfamous.JPG) no-repeat top center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  /*mix-blend-mode: hard-light;*/
 }
 .intro .intro-body {
   display: table-cell;
@@ -250,7 +271,7 @@ a:focus {
   height: 70px;
   margin-top: 15px;
   padding: 7px 16px;
-  /*border: 2px solid white;*/
+  border: 2px solid white;
   border-radius: 100% !important;
   font-size: 40px;
   color: white;
@@ -262,7 +283,7 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
   outline: none;
-  color: white;
+  color: #FFF;
   background: rgba(255, 255, 255, 0.1);
 }
 .btn-circle i.animated {
@@ -314,10 +335,11 @@ a:focus {
 }
 .download-section {
   width: 100%;
-  padding: 50px 0;
-  color: white;
-  background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
-  background-color: black;
+  padding: 20px 0;
+  padding-bottom: 0;
+  color: black;
+  /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;*/
+  background-color: #FFF2B9;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -350,16 +372,16 @@ a:focus {
   border-radius: 0;
 }
 .btn-default {
-  border: 1px solid #42DCA3;
-  color: #42DCA3;
+  border: 1px solid rgb(109, 239, 89);
+  color: rgb(109, 239, 89);
   background-color: transparent;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid #42DCA3;
+  border: 1px solid rgb(109, 239, 89);
   outline: none;
-  color: black;
-  background-color: #42DCA3;
+  color: white;
+  background-color: rgb(109, 239, 89);
 }
 ul.banner-social-buttons {
   margin-top: 0;
