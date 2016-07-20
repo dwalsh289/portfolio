@@ -4,6 +4,10 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+//popover//
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
 
 //flip effect//
 $('.flip-container').click(function (e) {

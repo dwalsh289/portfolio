@@ -4,6 +4,41 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
+#frame {
+  width: 600px;
+  position: absolute;
+  height: 450px;
+  z-index: 0;
+  margin: 0 auto;
+}
+
+#clicker {
+  width: 100px;
+  height: 100px;
+  margin-top: -20px;
+  z-index: 2;
+  margin-bottom: 15px;
+}
+
+.col-lg-12 p {
+  margin-top: -35px;
+  margin-bottom: 0px;
+}
+
+.download-section h1 {
+  /*border-width: 20px;*/
+  /*border-style: groove;*/
+  /*border-color: red;*/
+  /*border-top-left-radius: 15em 1em;*/
+  /*border-bottom-right-radius: 15em 1em;*/
+
+}
+
+.download-section span {
+  display: block;
+}
+
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
@@ -76,16 +111,13 @@
 }
 
 .front img {
-  width: 350px;
+  width: 340px;
   height: auto;
   margin-left: -8px;
 }
 
 .back {
   background: transparent;
-}
-
-.back {
   transform: rotateY(-180deg);
 }
 
@@ -110,6 +142,12 @@
   z-index: 1;
 }
 
+.updateBlock {
+  width: 350px;
+  height: 386px;
+  margin-top: 50px;
+  margin-left: -8px;
+}
 
 body {
   width: 100%;
