@@ -4,6 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+//hide on hover//
+$('.imageOne').hover(function() {
+    $('#clickMe').fadeOut("slow");
+});
+
 //popover//
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
@@ -18,7 +23,7 @@ $('.flip-containerTwo').click(function (e) {
     $(this).toggleClass('flipped');
 });
 
-//image bob effect//
+// //image bob effect//
 var balloon = $('.imageOne');
 function runIt() {
     balloon.animate({top:'+=15'}, 1200);
@@ -36,14 +41,20 @@ function runItTwo() {
 runItTwo();
 
 //parralax effect//
-var jumboHeight = $('.intro-body').outerHeight();
-function parallax(){
-    var scrolled = $(window).scrollTop();
-    $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-}
+$(function(){
 
-$(window).scroll(function(e){
-    parallax();
+    
+
+
+    var jumboHeight = $('.intro-body').outerHeight();
+    function parallax(){
+        var scrolled = $(window).scrollTop();
+        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+    }
+
+    $(window).scroll(function(e){
+        parallax();
+    });
 });
 
 
