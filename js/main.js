@@ -24,21 +24,21 @@ $('.flip-containerTwo').click(function (e) {
 });
 
 // //image bob effect//
-// var balloon = $('.imageOne');
-// function runIt() {
-//     balloon.animate({top:'+=15'}, 1200);
-//     balloon.animate({top:'-=15'}, 1000, runIt);
-// }
-//
-// runIt();
-//
-// var balloonTwo = $('.imageTwo');
-// function runItTwo() {
-//     balloonTwo.animate({top:'+=15'}, 1200);
-//     balloonTwo.animate({top:'-=15'}, 1000, runItTwo);
-// }
-//
-// runItTwo();
+var balloon = $('.imageOne');
+function runIt() {
+    balloon.animate({top:'+=15'}, 1200);
+    balloon.animate({top:'-=15'}, 1000, runIt);
+}
+
+runIt();
+
+var balloonTwo = $('.imageTwo');
+function runItTwo() {
+    balloonTwo.animate({top:'+=15'}, 1200);
+    balloonTwo.animate({top:'-=15'}, 1000, runItTwo);
+}
+
+runItTwo();
 
 // //parralax effect//
 // $(function(){
