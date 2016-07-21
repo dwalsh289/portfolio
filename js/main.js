@@ -24,38 +24,38 @@ $('.flip-containerTwo').click(function (e) {
 });
 
 // //image bob effect//
-var balloon = $('.imageOne');
-function runIt() {
-    balloon.animate({top:'+=15'}, 1200);
-    balloon.animate({top:'-=15'}, 1000, runIt);
-}
+// var balloon = $('.imageOne');
+// function runIt() {
+//     balloon.animate({top:'+=15'}, 1200);
+//     balloon.animate({top:'-=15'}, 1000, runIt);
+// }
+//
+// runIt();
+//
+// var balloonTwo = $('.imageTwo');
+// function runItTwo() {
+//     balloonTwo.animate({top:'+=15'}, 1200);
+//     balloonTwo.animate({top:'-=15'}, 1000, runItTwo);
+// }
+//
+// runItTwo();
 
-runIt();
-
-var balloonTwo = $('.imageTwo');
-function runItTwo() {
-    balloonTwo.animate({top:'+=15'}, 1200);
-    balloonTwo.animate({top:'-=15'}, 1000, runItTwo);
-}
-
-runItTwo();
-
-//parralax effect//
-$(function(){
-
-    
-
-
-    var jumboHeight = $('.intro-body').outerHeight();
-    function parallax(){
-        var scrolled = $(window).scrollTop();
-        $('.bg').css('height', (jumboHeight-scrolled) + 'px');
-    }
-
-    $(window).scroll(function(e){
-        parallax();
-    });
-});
+// //parralax effect//
+// $(function(){
+//
+//
+//
+//
+//     var jumboHeight = $('.intro-body').outerHeight();
+//     function parallax(){
+//         var scrolled = $(window).scrollTop();
+//         $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+//     }
+//
+//     $(window).scroll(function(e){
+//         parallax();
+//     });
+// });
 
 
 //jquery to get a color gradient for element with gradient id//
