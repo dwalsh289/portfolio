@@ -3,6 +3,23 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+//
+// (function($) {
+//     var $window = $(window),
+//         $html = $('#leadFlip');
+//
+//     function resize() {
+//         if ($window.width() < 514) {
+//             return $html.removeClass('pull-left');
+//         }
+//
+//         $html.addClass('pull-left');
+//     }
+//
+//     $window
+//         .resize(resize)
+//         .trigger('resize');
+// })(jQuery);
 
 //hide on hover//
 $('.imageOne').hover(function() {

@@ -5,7 +5,8 @@
  */
 
 
-#works {
+#leadFlip {
+  /*overflow-x: hidden;*/
 }
 
 #frame {
@@ -36,15 +37,6 @@
   margin-bottom: 0px;
 }
 
-.download-section h1 {
-  /*border-width: 20px;*/
-  /*border-style: groove;*/
-  /*border-color: red;*/
-  /*border-top-left-radius: 15em 1em;*/
-  /*border-bottom-right-radius: 15em 1em;*/
-
-}
-
 .download-section span {
   display: block;
 }
@@ -52,23 +44,6 @@
 .nopadding {
   padding: 0 !important;
   margin: 0 !important;
-}
-
-
-/*.spacer {*/
-  /*width: 22%;*/
-  /*height: 324px;*/
-/*}*/
-/*upside down triangle*/
-#rectangle {
-  width: 77%;
-  left: 12%;
-  height: 20px;
-  background: #fcfcfc;
-  z-index: 0;
-  position: absolute;
-  margin-top: 135px;
-  mix-blend-mode: hard-light;
 }
 
 /* project flip effect */
@@ -79,6 +54,8 @@
   width: 350px;
   height: 566px;
   transition: all 0.9s;
+  -webkit-transition: all 0.9s;
+  -moz-transition: all 0.9s;
   perspective: 900px;
   z-index: 2;
   overflow: hidden;
@@ -95,6 +72,8 @@
   width: 350px;
   height: 386px;
   transition: all 0.9s;
+  -webkit-transition: all 0.9s;
+  -moz-transition: all 0.9s;
   perspective: 900px;
   z-index: 2;
   overflow: hidden;
@@ -111,9 +90,14 @@
   min-height: 100%;
   text-align: left;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
   transform-style: preserve3d;
   transition: all 0.9s;
+  -webkit-transition: all 0.9s;
+  -moz-transition: all 0.9s;
   margin-top: 50px;
+  padding: 0px;
 }
 
 .front {
@@ -224,7 +208,7 @@ a:focus {
 }
 .navbar-custom .navbar-toggle {
   color: #fcfcfc;
-  background-color: #fcfcfc);
+  background-color: #427AE3;
   font-size: 12px;
 }
 .navbar-custom .navbar-toggle:focus,
@@ -297,6 +281,8 @@ a:focus {
     width: 250px;
     height: 485px;
     transition: all 0.9s;
+    -webkit-transition: all 0.9s;
+    -moz-transition: all 0.9s;
     perspective: 900px;
     z-index: 2;
     overflow: hidden;
@@ -312,6 +298,8 @@ a:focus {
     width: 250px;
     height: 385px;
     transition: all 0.9s;
+    -webkit-transition: all 0.9s;
+    -moz-transition: all 0.9s;
     perspective: 900px;
     z-index: 2;
     overflow: hidden;
@@ -326,16 +314,17 @@ a:focus {
   }
 
   .front img {
-  width: 240px;
-    height: auto;
+    width: 240px;
+    height: 400px;
     margin-left: -8px;
+    position: fixed;
   }
 
   .light {
     font-size: 12px;
   }
   #clickMe {
-    display: hide;
+    display: none;
   }
 }
 
@@ -360,7 +349,7 @@ a:focus {
   display: table;
   width: 100%;
   height: auto;
-  padding: 100px 0;
+  padding-top: 100px;
   text-align: center;
   color: #fcfcfc;
   background: url(../img/cliffs_superfamous.JPG) no-repeat top center scroll;
@@ -462,7 +451,7 @@ a:focus {
 }
 .download-section {
   width: 100%;
-  padding: 20px 0;
+  padding-top: 20px;
   padding-bottom: 0;
   color: black;
   /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;*/
