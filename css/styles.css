@@ -5,8 +5,8 @@
  */
 
 
-#leadFlip {
-  /*overflow-x: hidden;*/
+.spacer {
+  margin-right: 30px;
 }
 
 #frame {
@@ -46,6 +46,11 @@
   margin: 0 !important;
 }
 
+#leadFlip {
+  overflow: hidden;
+  display: block;
+
+}
 /* project flip effect */
 .flip-container {
   /*margin: 50px auto;*/
@@ -263,6 +268,7 @@ a:focus {
 }
 
 @media only screen and (max-width: 769px) {
+
   #imageBox {
     padding-bottom: 200px;
     padding-top: 75px;
@@ -315,7 +321,7 @@ a:focus {
 
   .front img {
     width: 240px;
-    height: 400px;
+    height: auto;
     margin-left: -8px;
     position: fixed;
   }
@@ -386,6 +392,7 @@ a:focus {
   width: 70px;
   height: 70px;
   margin-top: 15px;
+  margin-bottom: 40px;
   padding: 7px 16px;
   border: 2px solid #fcfcfc;
   border-radius: 100% !important;
@@ -446,9 +453,11 @@ a:focus {
     transform: scale(1);
   }
 }
+
 .content-section {
   padding-top: 100px;
 }
+
 .download-section {
   width: 100%;
   padding-top: 20px;
@@ -533,11 +542,4 @@ img::-moz-selection {
 }
 body {
   webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
-}
-
-@media screen and (max-width:1199px)
-  .spacer {
-    width: 17%;
-  }
-
 }

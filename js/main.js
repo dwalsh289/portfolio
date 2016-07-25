@@ -4,22 +4,93 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 //
+(function($) {
+    var $window = $(window),
+        $html = $('#leadFlip');
+
+    function resize() {
+        if ($window.width() < 560) {
+            return $html.removeClass('pull-left').addClass('center-block');
+        } else {
+            $html.removeClass('center-block').addClass('pull-left');
+
+        }
+
+    }
+
+    $window
+        .resize(resize)
+        .trigger('resize');
+})(jQuery);
+
+(function($) {
+    var $window = $(window),
+        $text = $('#textContainer');
+
+    function resize() {
+        if ($window.width() < 992) {
+            return $text.removeClass('pull-right').addClass('center-block');
+        } else {
+            $text.removeClass('center-block').addClass('pull-right');
+
+        }
+    }
+    $window
+        .resize(resize)
+        .trigger('resize');
+})(jQuery);
+
 // (function($) {
 //     var $window = $(window),
-//         $html = $('#leadFlip');
+//         $text = $('#textContainer');
 //
 //     function resize() {
-//         if ($window.width() < 514) {
-//             return $html.removeClass('pull-left');
+//         if ($window.width() < 560) {
+//             return $text.removeClass('pull-right').addClass('center-block');
+//         } else {
+//             $text.removeClass('center-block').addClass('pull-right')
 //         }
-//
-//         $html.addClass('pull-left');
 //     }
-//
 //     $window
 //         .resize(resize)
 //         .trigger('resize');
 // })(jQuery);
+
+// (function($) {
+//     var $window = $(window),
+//         $swan = $('#leadFlip');
+//
+//     function resize() {
+//         if ($window.width() < 560) {
+//             return $swan.removeClass('pull-right').addClass('center-block');
+//         } else {
+//             $swan.removeClass('center-block').addClass('pull-right')
+//
+//         }
+//     }
+//     $window
+//         .resize(resize)
+//         .trigger('resize');
+// })(jQuery);
+
+(function($) {
+    var $window = $(window),
+        $surreal = $('#surrealBox');
+
+
+    function resize() {
+        if ($window.width() < 560) {
+            return $surreal.removeClass('pull-right').addClass('center-block');
+        } else {
+            $surreal.removeClass('center-block').addClass('pull-right');
+
+        }
+    }
+    $window
+        .resize(resize)
+        .trigger('resize');
+})(jQuery);
+
 
 //hide on hover//
 $('.imageOne').hover(function() {
