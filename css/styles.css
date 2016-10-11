@@ -48,7 +48,7 @@
 
 #leadFlip {
   overflow: hidden;
-  display: block;
+  /*display: block;*/
 
 }
 /* project flip effect */
@@ -56,8 +56,10 @@
   /*margin: 50px auto;*/
 
   background: transparent;
-  width: 350px;
-  height: 566px;
+  /*width: 350px;*/
+  height: 495px;
+  width: 800px;
+  /*height: 566;*/
   transition: all 0.9s;
   -webkit-transition: all 0.9s;
   -moz-transition: all 0.9s;
@@ -103,20 +105,19 @@
   -moz-transition: all 0.9s;
   margin-top: 50px;
   padding: 0px;
+  background: transparent;
 }
 
 .front {
-  background: transparent;
 }
 
-.front img {
-  width: 340px;
-  height: auto;
-  margin-left: -8px;
-}
+/*.front img {*/
+  /*width: 340px;*/
+  /*height: auto;*/
+  /*margin-left: -8px;*/
+/*}*/
 
 .back {
-  background: transparent;
   transform: rotateY(-180deg);
 }
 
@@ -157,8 +158,8 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FFF;
-  background-color: #6495ed;
+  color: #3b3b3b;
+  background-color: #ced3dc;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -191,7 +192,7 @@ p {
   }
 }
 a {
-  color: #FFF2B9;
+  color: #ffe46e;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -206,14 +207,14 @@ a:focus {
 }
 .navbar-custom {
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  /*box-shadow: 1px 1px 5px rgba(175, 172, 158, 0.47);*/
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #427AE3;
+  background-color: #ced3dc;
 }
 .navbar-custom .navbar-toggle {
   color: #fcfcfc;
-  background-color: #427AE3;
+  background-color: #ced3dc;
   font-size: 12px;
 }
 .navbar-custom .navbar-toggle:focus,
@@ -229,6 +230,12 @@ a:focus {
 .navbar-custom a {
   color: #fcfcfc;
 }
+
+.color-change-on-scroll {
+  color: #3b3b3b !important;
+}
+
+
 .navbar-custom .nav li a {
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
@@ -236,7 +243,7 @@ a:focus {
 }
 
 .navbar-custom .nav li a:hover {
-  color: #FFF2B9;
+  color: #ffe46e;
   outline: none;
   background-color: transparent;
 }
@@ -249,11 +256,11 @@ a:focus {
   outline: none;
 }
 .navbar-custom .nav li.active a {
-  background-color: #FFF2B9;
-  color: #6495ed;
+  background-color: #ffe46e;
+  color: #3b3b3b;
 }
 .navbar-custom .nav li.active a:hover {
-  color: #6495ed;
+  color: #ced3dc;
 }
 @media only screen and (min-width: 768px max-width: 992px) {
   #imageBox {
@@ -347,9 +354,9 @@ a:focus {
   }
   .navbar-custom.top-nav-collapse {
     padding: 0;
-    background: #6495ed;
-    border-bottom: 4px solid #FFF2B9;
-    color: #fcfcfc;
+    background: #ced3dc;
+    box-shadow: 1px 1px 5px rgba(175, 172, 158, 0.47);
+    color: #3b3b3b;
   }
 }
 .intro {
@@ -359,7 +366,7 @@ a:focus {
   padding-top: 100px;
   text-align: center;
   color: #fcfcfc;
-  background: url(../img/cliffs_superfamous.JPG) no-repeat top center scroll;
+  background: url(../img/cliffs_superfamous_opt.jpg) no-repeat top center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -392,10 +399,10 @@ a:focus {
 .btn-circle {
   width: 70px;
   height: 70px;
-  margin-top: 15px;
+  /*margin-top: 15px;*/
   margin-bottom: 40px;
-  padding: 7px 16px;
-  border: 2px solid #fcfcfc;
+  /*padding: 7px 16px;*/
+  /*border: 2px solid #fcfcfc;*/
   border-radius: 100% !important;
   font-size: 40px;
   color: #fcfcfc;
@@ -463,9 +470,9 @@ a:focus {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 0;
-  color: black;
+  color: #3b3b3b;
   /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;*/
-  background-color: #fcfcfc;
+  background-color: #ffe46e;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -490,16 +497,16 @@ a:focus {
   border-radius: 0;
 }
 .btn-default {
-  border: 1px solid #FFF2B9;
-  color: #FFF2B9;
+  border: 1px solid #ffe46e;
+  color: #ffe46e;
   background-color: transparent;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 1px solid #FFF2B9;
+  border: 1px solid #ffe46e;
   outline: none;
-  color: #6495ed;
-  background-color: #FFF2B9;
+  color: #ced3dc;
+  background-color: #ffe46e;
 }
 ul.banner-social-buttons {
   margin-top: 0;
