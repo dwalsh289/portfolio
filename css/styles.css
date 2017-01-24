@@ -66,6 +66,27 @@
 
 }
 
+#about img {
+  width: 250px;
+  height: auto;
+  margin-left: 10em;
+  margin-top: 5em;
+  border: 2px solid #f1f1f1;
+}
+
+.content-section h2 {
+  display: inline-block;
+  white-space: nowrap;
+}
+.download-section span {
+  display: inline !important;
+}
+.clickerDirections {
+  background-color: #ffe46e;
+  padding: 10px 8px 4px 8px;
+  white-space: nowrap;
+}
+
 .col-lg-12 p {
   margin-top: -35px;
   margin-bottom: 0px;
