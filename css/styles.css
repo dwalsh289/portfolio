@@ -66,12 +66,59 @@
 
 }
 
-#about img {
-  width: 250px;
+#about {
+  height: 80vh;
+}
+#about p{
+  line-height: 1.5em;
+  letter-spacing: 1px;
+  font-size: 1.25em;
+}
+
+.bricks {
+  z-index: 0;
+  opacity: 1;
+  position: absolute;
+  
+}
+
+.bricks1 {
+  left: 0;
+  top: 0;
+}
+
+.bricks2 {
+  right: 0;
+  bottom: 0;
+}
+
+.profilePic {
+  position: relative;
+  display: table-cell;
+  width: 200px;
   height: auto;
-  margin-left: 10em;
-  margin-top: 5em;
+  margin: 0 auto;
   border: 2px solid #f1f1f1;
+  border-radius: 2px;
+}
+
+.skillSet {
+  display: table-cell;
+  margin-top: 1em;
+  margin: 0 auto;
+}
+
+#about a {
+  background-color: #ffe46e;
+  color: #3b3b3b !important;
+  padding: 4px 4px 2px 4px;
+
+}
+#about a:hover {
+  background-color: transparent;
+  color: #f1f1f1 !important;
+  padding: 4px 4px 2px 4px;
+
 }
 
 .content-section h2 {
@@ -165,8 +212,11 @@
   background: transparent;
 }
 
-.front, img {
+.front img {
   cursor: pointer;
+  border-left: 10px solid #3b3b3b;
+  border-right: 10px solid #3b3b3b;
+  border-radius: 2px;
 }
 
 /*.front img {*/
