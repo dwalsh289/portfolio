@@ -112,12 +112,13 @@
   background-color: #ffe46e;
   color: #3b3b3b !important;
   padding: 4px 4px 2px 4px;
-
+  cursor: pointer;
 }
 #about a:hover {
   background-color: transparent;
   color: #f1f1f1 !important;
   padding: 4px 4px 2px 4px;
+  cursor: pointer !important;
 
 }
 
@@ -518,7 +519,7 @@ a:focus {
   padding-top: 100px;
   text-align: center;
   color: #fcfcfc;
-  background: url(../img/cliffs_superfamous_opt.jpg) no-repeat top center scroll;
+  background: url(../img/dylan-walsh-background-circles.png) no-repeat top center scroll;
   background-color: #3b3b3b;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -593,6 +594,7 @@ a:focus {
   height: 70px;
   /*margin-top: 15px;*/
   margin-bottom: 40px;
+  cursor: pointer;
   /*padding: 7px 16px;*/
   /*border: 2px solid #fcfcfc;*/
   border-radius: 100% !important;
