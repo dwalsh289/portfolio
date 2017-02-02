@@ -109,16 +109,20 @@
 }
 
 #about a {
-  background-color: #ffe46e;
-  color: #3b3b3b !important;
-  padding: 4px 4px 2px 4px;
+  background-color: #1800e3;
+  color: #fcfcfc !important;
+  padding: 5px 5px 3px 5px;
+  border: 1px solid #1800e3;
   cursor: pointer;
+  border-radius: 2px;
 }
 #about a:hover {
   background-color: transparent;
-  color: #f1f1f1 !important;
-  padding: 4px 4px 2px 4px;
+  color: #1800e3 !important;
+  padding: 5px 5px 3px 5px;
+  border: 1px solid #1800e3;
   cursor: pointer !important;
+  border-radius: 2px;
 
 }
 
@@ -126,22 +130,10 @@
   display: inline-block;
   white-space: nowrap;
 }
-.download-section span {
-  display: inline !important;
-}
-.clickerDirections {
-  background-color: #ffe46e;
-  padding: 10px 8px 4px 8px;
-  white-space: nowrap;
-}
 
 .col-lg-12 p {
   margin-top: -35px;
   margin-bottom: 0px;
-}
-
-.download-section span {
-  display: block;
 }
 
 .nopadding {
@@ -214,7 +206,7 @@
 }
 
 .front img {
-  cursor: pointer;
+  cursor: pointer !important;
   border-left: 10px solid #3b3b3b;
   border-right: 10px solid #3b3b3b;
   border-radius: 2px;
@@ -263,14 +255,30 @@
   margin-left: -8px;
 }
 
+.emailMe {
+  color: #fcfcfc;
+  background-color: #1800e3;
+  padding: 10px 5px 3px 5px;
+  border: 2px solid #1800e3;
+  border-radius: 2px;
+}
+
+.emailMe:hover {
+  color: #1800e3;
+  background-color: #fcfcfc;
+  border: 2px solid #1800e3;
+  padding: 10px 5px 3px 5px;
+  border-radius: 2px;
+}
+
 body {
   width: 100%;
   height: 100%;
   font-family: avenirBook, "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FCFCFC;
+  color: #3b3b3b;
   /*background-color: #58627d;*/
-  background-color: #3b3b3b;
-
+  background-color: #fcfcfc;
+  letter-spacing: .2em;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -299,12 +307,13 @@ p {
 @media (min-width: 768px) {
   p {
     margin: 0 0 35px;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1.6;
   }
 }
 a {
-  color: #ffe46e;
+  color: #fcfcfc;
+  letter-spacing: .1em;
   /*color: white;*/
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
@@ -324,7 +333,7 @@ a:focus {
   text-transform: uppercase;
   font-family: avenirBook, "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*background-color: #58627d;*/
-  background-color: #3b3b3b;
+  background-color: #fcfcfc;
 
 }
 .navbar-custom .navbar-toggle {
@@ -348,7 +357,7 @@ a:focus {
 }
 
 .color-change-on-scroll {
-  color: #e0e0e0 !important;
+  color: #fcfcfc !important;
 }
 
 
@@ -360,7 +369,7 @@ a:focus {
 
 .navbar-custom .nav li a:hover {
   /*color: #ffe46e;*/
-  color: white;
+  color: #fcfcfc;
 
   outline: none;
   background-color: transparent;
@@ -385,21 +394,6 @@ a:focus {
 
 }
 
-/*text shadow effects */
-.retroshadow {
-
-   letter-spacing: .15em;
-   text-shadow:
-           4px 4px 0px #e9e9e9,
-           7px 7px 0px rgba(0, 0, 0, 0.2);
- }
-.babyshadow {
-
-  letter-spacing: .15em;
-  text-shadow:
-          5px 7px 0px rgba(79, 79, 79, 0.3),
-          5px 7px 0px rgba(0, 0, 0, 0.1);
-}
 
 @media only screen and (min-width: 768px max-width: 992px) {
   #imageBox {
@@ -512,6 +506,9 @@ a:focus {
   font-weight: 600;
 }
 
+.parallax-window {
+  min-height: 600px;
+}
 .intro {
   display: table;
   width: 100%;
@@ -519,25 +516,68 @@ a:focus {
   padding-top: 100px;
   text-align: center;
   color: #fcfcfc;
-  background: url(../img/dylan-walsh-background-circles.png) no-repeat top center scroll;
-  background-color: #3b3b3b;
+  /*color: #ffe329;*/
+  /*color: #b2fe70;*/
+  /*color: #fe7370;*/
+  /*background: url(../img/dylan-walsh-background-circles2.png) no-repeat scroll;*/
+  /*background-size: 1280px 750px;*/
+  /*background-color: #3b3b3b;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
   /*mix-blend-mode: hard-light;*/
 }
-.intro .intro-body {
-  display: table-cell;
-  vertical-align: middle;
+.intro-body {
+
 }
-.intro .intro-body .brand-heading {
-  font-size: 40px;
-  padding-top: 1em;
+
+.parallax-mirror {
+  height: 100vh !important;
 }
-.intro .intro-body .intro-text {
+
+.intro-body i{
+  mix-blend-mode: hard-light;
+  font-size: 1.2em;
+  color: #fcfcfc;
+}
+.brand-heading {
+  font-size: 72px;
+  padding-top: 0em;
+  mix-blend-mode: hard-light;
+  margin-top: 30%;
+  letter-spacing: 10px;
+}
+.intro-text {
   font-size: 18px;
+  mix-blend-mode: hard-light;
 }
+
+/*text shadow effects */
+.retroshadow {
+
+  letter-spacing: .15em;
+  text-shadow:
+          6px 3px 0px #1800e3,
+          7px 7px 8px rgb(44, 20, 68)
+}
+.babyshadow {
+
+  letter-spacing: .15em;
+  text-shadow:
+          2px 1px 0px  #1800e3,
+          3px 3px 8px rgb(44, 20, 68);
+  /*text-shadow:*/
+          /*5px 7px 0px rgba(68, 62, 15, 0.3),*/
+          /*5px 7px 0px rgba(0, 0, 0, 0.1);*/
+}
+
+.tinybabyshadow {
+  text-shadow:
+          1px 1px 0px  #1800e3,
+          2px 2px 6px rgb(44, 20, 68);
+}
+
 
 .noise {
   position: relative;
@@ -592,14 +632,11 @@ a:focus {
 .btn-circle {
   width: 70px;
   height: 70px;
-  /*margin-top: 15px;*/
   margin-bottom: 40px;
   cursor: pointer;
-  /*padding: 7px 16px;*/
-  /*border: 2px solid #fcfcfc;*/
   border-radius: 100% !important;
   font-size: 40px;
-  color: #fcfcfc;
+  color: #3b3b3b;
   background: transparent;
   -webkit-transition: background 0.3s ease-in-out;
   -moz-transition: background 0.3s ease-in-out;
@@ -608,8 +645,7 @@ a:focus {
 .btn-circle:hover,
 .btn-circle:focus {
   outline: none;
-  color: #fcfcfc;
-  /*background: rgba(255, 255, 255, 0.1);*/
+  color: #3b3b3b;
 }
 .btn-circle i.animated {
   -webkit-transition-property: -webkit-transform;
@@ -660,19 +696,30 @@ a:focus {
   padding-top: 100px;
 }
 
-.download-section {
+.works-section {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 0;
   color: #3b3b3b;
+  letter-spacing: .15em;
   /*background: url(../img/downloads-bg.jpg) no-repeat center center scroll;*/
   /*background-color: #ffe46e;*/
-  background-color: white;
-
+  background-color: #fcfcfc;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+}
+
+.works-section span {
+  display: inline !important;
+}
+.clickerDirections {
+  background-color: #1800e3;
+  color: #fcfcfc;
+  padding: 10px 8px 4px 8px;
+  white-space: nowrap;
+  border-radius: 2px;
 }
 
 #salonBox {
@@ -680,14 +727,6 @@ a:focus {
   padding-bottom: 5em;
 }
 
-/*@media (min-width: 767px) {*/
-  /*.content-section {*/
-    /*padding-top: 150px;*/
-  /*}*/
-  /*.download-section {*/
-    /*padding: 100px 0;*/
-  /*}*/
-/*}*/
 .btn {
   text-transform: uppercase;
   font-family: avenirBook, "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -699,19 +738,19 @@ a:focus {
   padding-top: 15px;
 }
 .btn-default {
-  border: 2px solid white;
+  border: 2px solid #3b3b3b;
   /*color: #ffe46e;*/
-  color: white;
+  color: #3b3b3b;
   background-color: transparent;
 }
 .btn-default:hover,
 .btn-default:focus {
-  border: 2px solid white;
+  border: 2px solid #3b3b3b;
   outline: none;
-  color: #3b3b3b;
+  color: #fcfcfc;
   /*color: #58627d;*/
   /*background-color: #ffe46e;*/
-  background-color: white;
+  background-color: #3b3b3b;
 
 }
 .visitButton {

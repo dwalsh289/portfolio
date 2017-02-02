@@ -44,6 +44,18 @@
 
     <!-- Theme CSS -->
     <link href="css/styles.css" rel="stylesheet">
+    <link type="text/css" href="css/jquery.fullPage.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.js"></script>
+
+    <!-- JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+
 
 </head>
 
@@ -56,8 +68,8 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-file-code-o"></i> <span class="light">DJ Walsh - App Development and Design</span>
+                <a class="navbar-brand page-scroll tinybabyshadow" href="#page-top">
+                    <span class="light">DJ Walsh Developer/Designer</span>
                 </a>
             </div>
 
@@ -69,14 +81,14 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll tinybabyshadow" href="#about">About</a>
 
                     </li>
                     <li>
-                        <a class="page-scroll" href="#works">Works</a>
+                        <a class="page-scroll tinybabyshadow" href="#works">Works</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll tinybabyshadow" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -86,22 +98,24 @@
     </nav>
 
     <!-- Intro Header -->
-    <!--add noise to header section to see tv grain effect-->
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
+    <div class="intro">
+        <div class="intro-body" >
+            <div class="container-fluid">
+                <div class="row prallax-window" data-parallax="scroll" data-image-src="img/dylan-walsh-background-circles2.png">
                     <div class="col-sm-6 col-md-offset-3">
-                        <h1 class="brand-heading retroshadow" style="margin-top: 20%; letter-spacing: 10px;">Dylan J. Walsh</h1>
-                        <p class="intro-text babyshadow">Web Developer/Designer</p>
+                        <h1 class="brand-heading retroshadow">Dylan J Walsh</h1>
+                        <p class="intro-text babyshadow">Web Developer & Designer</p>
                         <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-chevron-down animated" style="font-size: 1.1em; color: #fcfcfc;"></i>
+                            <i class="babyshadow fa fa-chevron-down animated"></i>
+                            <!--<canvas style="display:none" id="canvas" width="285" height="285"></canvas>-->
+                            <!--<canvas style="display:none" id="canvas3" width="570" height="570"></canvas>-->
+                            <!--<canvas id="canvas2" width="570" height="570">*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>-->
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
 
     <!-- About Section -->
     <section id="about" class="container content-section">
@@ -124,7 +138,7 @@
 
             </div>
             <div class="col-sm-6 center-block">
-                <img class="profilePic" src="img/profile_pic.png" alt="dylan walsh web design development tech">
+                <img class="profilePic" src="img/dylan-walsh-background-circles3.png" alt="dylan walsh web design development tech">
                 <img class="skillSet" src="img/skillset_icons.png" alt="dylan walsh web skills icons">
             </div>
             </div>
@@ -146,9 +160,9 @@
 
     </section>
 
-    <!-- Download Section -->
+    <!-- Works Section -->
     <section class="content-section text-center">
-        <div id="works" class="download-section">
+        <div id="works" class="works-section">
             <div class="container">
 
                     <div class="col-lg-12">
@@ -161,63 +175,6 @@
                         </div>
 
                     </div>
-                <!--<div id="leadFlip" class="flip-container pull-left">-->
-                <!--<div class="front">-->
-                <!--<img src="img/swan_fullpage2.png" alt="Swan Asset Management">-->
-                <!--</div>-->
-                <!--<div class="back text-center">-->
-                <!--<h3>Swan Asset Management</h3>-->
-                <!--<p>Built from the ground up using Bootstrap, this site functions as-->
-                <!--a calling card and reference point for clients. Besides Front End-->
-                <!--design and coding, lead a rebranding effort in conjunction with the building of the site.</p>-->
-                <!--<p style="color: rgb(109, 239, 89);">Site goes live August 1st</p>-->
-                <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="flip-containerTwo col-md-2 center-block">-->
-                    <!--<div class="front">-->
-                        <!--<img style="position: absolute;" src="img/matrix_moving.gif" alt="coding">-->
-                        <!--<h2 class="text-center" style="position: relative; color: rgb(109, 239, 89);">Coding Projects</h2>-->
-                    <!--</div>-->
-                    <!--<div class="back text-center">-->
-                        <!--<h3>Coding Projects</h3>-->
-                        <!--<p>Have coded versions of Tic-Tac-Toe; Battleship;-->
-                            <!--Simon Says; Rock, Paper, Scissors; and simple-->
-                            <!--blogging platforms.</p>-->
-                        <!--<p>Built in Ruby, Ruby on Rails, Javascript, JQuery, and relevant html5/css3.</p>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-lg-2"></div>-->
-                <!--<div id="textContainer" class="flip-containerTwo col-md-2 pull-right">-->
-                    <!--<div class="updateBlock">-->
-                        <!--<h2 class="text-center" style="position: relative; color: black;">Updated Monthly</h2>-->
-                        <!--<br>-->
-                        <!--<br>-->
-                        <!--<h2 class="text-center" style="position: relative; color: black;">Check Back Soon</h2>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-
-                <!--bizarrely, this content block has pull-right hardwired into it even though-->
-                <!--it is not reflected in the actual code. more experimentation required.-->
-                <div class="col-lg-12 text-center">
-
-                        <div id="surrealBox" class="flip-container col-md-offset-2 col-md-4" style="display:none;">
-                            <div class="front">
-                                <img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal">
-                            </div>
-                            <div class="back text-center">
-                                <h3>Surreal Eyewear</h3>
-                                <p>Fully functional and responsive eCommerce website built in WordPress.
-                                Primarily resonsible for the Front-End asset presentation, worked
-                                with a designer and a back-end developer in an agile work environment to; complete
-                                the project.</p>
-                                <br>
-                                <p style="color: rgb(109, 239, 89);">Site goes live July 29th</p>
-                            </div>
-                        </div>
-
-                </div>
 
                 <div class="container col-lg-12 text-center">
                     <div id="surrealBox" class="flip-container col-md-offset-2 col-md-4">
@@ -316,11 +273,11 @@
                             <br>
                             <div class="row">
                                 <div class="col-md-11 pull-left" style="margin-left: 4%;">
-                                    <p> Took the site from serviceable to professional. Joined when project was 75%
-                                        completed as a ringer to finish what other developers started, requiring me
-                                        to learn others’ code quickly and build off it with efficiency and rigor.
-                                        Created a late game style guide to ensure consistent polish across the site
-                                        and implemented various UX changes to grab new users for this promising start-up.
+                                    <p> Joined when project was 70% completed as a ringer to finish what other
+                                        developers started, requiring a keen ability to learn others' code quickly and build
+                                        off it with efficiency and rigor. Created a late game style guide to ensure
+                                        consistent polish across the siteand implemented various UX changes to grab
+                                        new users for this promising start-up.
 
 
                                     </p>
@@ -345,7 +302,7 @@
                 <br>
                 <br>
                 <br>
-                <h2 id="emailLink">Reach out via email: <a href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a></h2>
+                <h2 id="emailLink">Reach out via email: <a class="emailMe" href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a></h2>
                 <p>So many possibilities</p>
                 <br>
                 <ul class="list-inline banner-social-buttons">
@@ -375,19 +332,14 @@
             <p style="font-size: 12px">Copyright &copy; dylanwalsh.nyc 2016</p>
         </div>
     </footer>
+    <!--&lt;!&ndash; jQuery &ndash;&gt;-->
+    <!--<script src="vendor/jquery/jquery.js"></script>-->
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.js"></script>
+    <!--&lt;!&ndash; Bootstrap Core JavaScript &ndash;&gt;-->
+    <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/main.js"></script>
-
+    <!--&lt;!&ndash; Theme JavaScript &ndash;&gt;-->
+    <!--<script src="js/main.js"></script>-->
 </body>
 
 </html>
