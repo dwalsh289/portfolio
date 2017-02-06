@@ -56,11 +56,10 @@ function collapseNavbar() {
     if ($(".navbar").offset().top > 170) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
         $(".page-scroll").addClass("color-change-on-scroll");
-        $(".page-scroll").removeClass("tinybabyshadow");
+
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
         $(".page-scroll").removeClass("color-change-on-scroll");
-        $(".page-scroll").addClass("tinybabyshadow");
     }
 }
 
