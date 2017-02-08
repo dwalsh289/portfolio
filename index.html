@@ -115,7 +115,7 @@
             maxRadius : 70,
             minSpeed:.0001,
             maxSpeed:.002,
-            particles:40,
+            particles:49,
             minSize:2,
             maxSize:5
         }
@@ -160,7 +160,7 @@
              farPlane
              );
              */
-            camera = new THREE.PerspectiveCamera(65, 1, .1, 2000);
+            camera = new THREE.PerspectiveCamera(25, 1, .1, 2000);
             camera.position.x = 120;
             camera.position.y = 50;
             camera.position.z = 90;
@@ -471,112 +471,6 @@
 
 
     </script>
-
-<!--<div id="container"></div>-->
-<!--<script src="js/three.min.js"></script>-->
-<!--<script>-->
-    <!--// Set the scene size.-->
-    <!--const WIDTH = window.innerWidth;-->
-    <!--const HEIGHT = window.innerHeight;-->
-
-    <!--// Set some camera attributes.-->
-    <!--const VIEW_ANGLE = 45;-->
-    <!--const ASPECT = WIDTH / HEIGHT;-->
-    <!--const NEAR = 0.1;-->
-    <!--const FAR = 10000;-->
-
-    <!--// Get the DOM element to attach to-->
-    <!--const container =-->
-            <!--document.querySelector('#container');-->
-
-    <!--// Create a WebGL renderer, camera-->
-    <!--// and a scene-->
-    <!--const renderer = new THREE.WebGLRenderer({ alpha: true });-->
-    <!--const camera =-->
-            <!--new THREE.PerspectiveCamera(-->
-                    <!--VIEW_ANGLE,-->
-                    <!--ASPECT,-->
-                    <!--NEAR,-->
-                    <!--FAR-->
-            <!--);-->
-
-    <!--const scene = new THREE.Scene();-->
-    <!--//    scene.background = new THREE.Color( 0xf8f8f8 );-->
-
-    <!--// Add the camera to the scene.-->
-    <!--scene.add(camera);-->
-
-    <!--// Start the renderer.-->
-    <!--renderer.setSize(WIDTH, HEIGHT);-->
-
-    <!--// Attach the renderer-supplied-->
-    <!--// DOM element.-->
-    <!--container.appendChild(renderer.domElement);-->
-
-    <!--// create a point light-->
-    <!--const pointLight =-->
-            <!--new THREE.PointLight(0x45bc96);-->
-
-    <!--// set its position-->
-    <!--pointLight.position.x = -90;-->
-    <!--pointLight.position.y = 80;-->
-    <!--pointLight.position.z = 130;-->
-
-    <!--// add to the scene-->
-    <!--scene.add(pointLight);-->
-
-    <!--// create the sphere's material-->
-    <!--const sphereMaterial =-->
-            <!--new THREE.MeshLambertMaterial(-->
-                    <!--{-->
-                        <!--color: 0xf8f8f8-->
-                    <!--});-->
-    <!--new THREE.MeshLambertMaterial(-->
-            <!--{-->
-                <!--color: 0xf8f8f8-->
-            <!--});-->
-    <!--new THREE.MeshLambertMaterial(-->
-            <!--{-->
-                <!--color: 0xf8f8f8-->
-            <!--});-->
-
-
-    <!--// Set up the sphere vars-->
-    <!--const RADIUS = 30;-->
-    <!--const SEGMENTS = 26;-->
-    <!--const RINGS = 26;-->
-
-    <!--// Create a new mesh with-->
-    <!--// sphere geometry - we will cover-->
-    <!--// the sphereMaterial next!-->
-    <!--const sphere = new THREE.Mesh(-->
-
-            <!--new THREE.SphereGeometry(-->
-                    <!--RADIUS,-->
-                    <!--SEGMENTS,-->
-                    <!--RINGS),-->
-
-            <!--sphereMaterial);-->
-
-    <!--// Move the Sphere back in Z so we-->
-    <!--// can see it.-->
-    <!--sphere.position.z = -100;-->
-
-    <!--// Finally, add the sphere to the scene.-->
-    <!--scene.add(sphere);-->
-
-
-    <!--function update () {-->
-        <!--// Draw!-->
-        <!--renderer.render(scene, camera);-->
-
-        <!--// Schedule the next frame.-->
-        <!--requestAnimationFrame(update);-->
-    <!--}-->
-
-    <!--// Schedule the first frame.-->
-    <!--requestAnimationFrame(update);-->
-<!--</script>-->
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">

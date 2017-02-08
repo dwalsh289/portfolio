@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ac80ffd-6b07-452a-ba87-124ebfd1d45f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/dylan-walsh-background-circles.png" afterPath="$PROJECT_DIR$/img/dylan-walsh-background-circles.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/img/dylan-walsh-background-circles2.png" afterPath="$PROJECT_DIR$/img/dylan-walsh-background-circles2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="portfolio.iws" />
@@ -32,8 +29,8 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="199">
-                  <caret line="650" column="19" selection-start-line="650" selection-start-column="19" selection-end-line="650" selection-end-column="19" />
+                <state relative-caret-position="214">
+                  <caret line="164" column="35" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
                   <folding>
                     <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#p#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -312,7 +309,7 @@
       <workItem from="1484334431982" duration="101000" />
       <workItem from="1485285559932" duration="585000" />
       <workItem from="1485295160527" duration="1295000" />
-      <workItem from="1485359173850" duration="56398000" />
+      <workItem from="1485359173850" duration="56731000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1468265143345</created>
@@ -531,11 +528,18 @@
       <option name="project" value="LOCAL" />
       <updated>1486501544466</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Implemented and customized 3d element, cleaned up color scheme, minimized errant design elements">
+      <created>1486596278332</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1486596278332</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160516000" />
+    <option name="totallyTimeSpent" value="160849000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -600,7 +604,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="minor add ons" />
     <MESSAGE value="half way edits for the day, fleshed out works section and small UX elements for depth" />
     <MESSAGE value="halfway edits, building responsive project showcase section" />
     <MESSAGE value="small edits and prelim design implementation" />
@@ -625,7 +628,8 @@
     <MESSAGE value="implemented parallax" />
     <MESSAGE value="clean up, just needs responsiveness and right side of about section" />
     <MESSAGE value="3d" />
-    <option name="LAST_COMMIT_MESSAGE" value="3d" />
+    <MESSAGE value="Implemented and customized 3d element, cleaned up color scheme, minimized errant design elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented and customized 3d element, cleaned up color scheme, minimized errant design elements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1032,8 +1036,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="650" column="19" selection-start-line="650" selection-start-column="19" selection-end-line="650" selection-end-column="19" />
+        <state relative-caret-position="214">
+          <caret line="164" column="35" selection-start-line="164" selection-start-column="35" selection-end-line="164" selection-end-column="35" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
