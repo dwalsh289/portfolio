@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: avenirNext;
-  src: url(avenir-basic/AvenirNextLTPro-Bold.otf);
+  src: url(avenir-basic/AvenirLTStd-Light.otf);
 }
 
 ::-webkit-scrollbar-track {
@@ -340,39 +340,39 @@ a {
 a:hover,
 a:focus {
   text-decoration: none;
-  color: #f8f8f8;
+  color: #45bc96;
 }
 .light {
   font-weight: 400;
+  font-size: 16px;
+  padding-top: 10px;
 }
 .navbar-custom {
   margin-bottom: 0;
-  opacity: .9;
   /*box-shadow: 1px 1px 5px rgba(175, 172, 158, 0.47);*/
   text-transform: uppercase;
   font-family: avenirBook, "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*background-color: #58627d;*/
-  background-color: #f8f8f8;
+  background-color: transparent;
 
 }
 .navbar-custom .navbar-toggle {
-  color: #f8f8f8;
-  /*background-color: #58627d;*/
-  background-color: #3b3b3b;
-  font-size: 12px;
+  color: #3b3b3b;
+  background-color: transparent;
+  /*font-size: 12px;*/
 }
 .navbar-custom .navbar-toggle:focus,
 .navbar-custom .navbar-toggle:active {
   outline: none;
 }
-.navbar-custom .navbar-brand {
-  font-weight: 700;
-}
+/*.navbar-custom .navbar-brand {*/
+  /*font-weight: 700;*/
+/*}*/
 .navbar-custom .navbar-brand:focus {
   outline: none;
 }
 .navbar-custom a {
-  color: #f8f8f8;
+  color: #3b3b3b;
 }
 
 /*.navbar-greenLeft:first-child {*/
@@ -389,9 +389,9 @@ a:focus {
   /*margin-right: 20px;*/
 /*}*/
 
-.color-change-on-scroll {
-  color: #f8f8f8 !important;
-}
+/*.color-change-on-scroll {*/
+  /*color: #45bc96 !important;*/
+/*}*/
 
 
 .navbar-custom .nav li a {
@@ -402,7 +402,7 @@ a:focus {
 
 .navbar-custom .nav li a:hover {
   /*color: #ffe46e;*/
-  color: #f8f8f8;
+  color: #45bc96;
 
   outline: none;
   background-color: transparent;
@@ -417,12 +417,12 @@ a:focus {
 }
 .navbar-custom .nav li.active a {
   /*background-color: #ffe46e;*/
-  background-color: #f8f8f8;
-  color: #3b3b3b !important;
+  background-color: transparent;
+  color: #45bc96 !important;
 }
 .navbar-custom .nav li.active a:hover {
   /*color: #58627d;*/
-  color: #3b3b3b;
+  /*color: #ec01a6;*/
 
 
 }
@@ -522,10 +522,10 @@ a:focus {
   .navbar-custom.top-nav-collapse {
     padding: 0;
     /*background: #58627d;*/
-    background: #3b3b3b;
+    background: transparent;
 
-    box-shadow: 0px 1px 0px #f8f8f8;
-    color: #e0e0e0;
+    /*box-shadow: 0px 1px 0px #f8f8f8;*/
+    color: green;
   }
 }
 
@@ -565,7 +565,7 @@ a:focus {
   height: auto;
   padding-top: 100px;
   text-align: center;
-  color: #f8f8f8;
+  color: #3b3b3b;
   /*color: #ffe329;*/
   /*color: #b2fe70;*/
   /*color: #fe7370;*/
@@ -576,7 +576,7 @@ a:focus {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  mix-blend-mode: hard-light;
+  /*mix-blend-mode: hard-light;*/
 }
 .intro-body {
 
@@ -589,14 +589,14 @@ a:focus {
 .intro-body i{
   mix-blend-mode: hard-light;
   font-size: 1.2em;
-  color: #f8f8f8;
+  color: #3b3b3b;
 }
 .brand-heading {
   font-size: 72px;
-  padding-top: 0em;
-  mix-blend-mode: hard-light;
-  margin-top: 30%;
-  letter-spacing: 10px;
+  padding-top: 0;
+  /*mix-blend-mode: hard-light;*/
+  margin-top: 25%;
+  letter-spacing: 15px;
 }
 .intro-text {
   font-size: 18px;
@@ -608,58 +608,17 @@ a:focus {
 
   letter-spacing: .15em;
   text-shadow:
-          6px 0px 0px #45bc96,
-          7px 2px 8px rgb(30, 3, 16)
+        6px 2px 0px #45bc96,
+        -1px -1px 0px #45bc96,
+        7px 1px 0px rgb(30, 3, 16);
 }
 .babyshadow {
-
-  letter-spacing: .15em;
   text-shadow:
-          2px 0px 0px  #45bc96,
-          3px 3px 8px rgb(44, 20, 68);
-  /*text-shadow:*/
-          /*5px 7px 0px rgba(68, 62, 15, 0.3),*/
-          /*5px 7px 0px rgba(0, 0, 0, 0.1);*/
+          /*2px 0px 0px  #45bc96,*/
+          /*3px 3px 8px rgb(44, 20, 68);*/
+          2px 0px 0px #112d25;
 }
 
-
-.noise {
-  position: relative;
-}
-
-.noise > *:last-child {
-  position: absolute;
-  opacity: 1;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url(../img/css-noise-3.png);
-  background-repeat: repeat;
-  background-position: 0 0;
-  animation: noiseMove 0.3s infinite linear alternate;
-}
-
-@keyframes noiseMove {
-  0% {
-    background-position: 50px 300px;
-  }
-  20% {
-    background-position: -100px 0px;
-  }
-  40% {
-    background-position: 150px -50px;
-  }
-  60% {
-    background-position: 0px -200px;
-  }
-  80% {
-    background-position: -10px -80px;
-  }
-  100% {
-    background-position: 70px 90px;
-  }
-}
 
 @media (min-width: 768px) {
   .intro {
@@ -778,8 +737,8 @@ a:focus {
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  border-radius: 0;
   padding-top: 15px;
+  border-radius: 2px;
 }
 .btn-default {
   border: 2px solid #3b3b3b;

@@ -61,105 +61,413 @@
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<div id="container"></div>
+<div id="world"></div>
 <script src="js/three.min.js"></script>
 <script src="js/OrbitControls.js"></script>
     <script>
-        // Create a scene which will hold all our meshes to be rendered
-        var scene = new THREE.Scene();
+        function getMat(color){
+            // our material is a phong material, with no shininess (highlight) and a black specular
+            return new THREE.MeshStandardMaterial({
+                color:0x45BC96,
+                roughness:.9,
+                shininess:10,
+                //specular:0x000000,
+                opacity:.7,
+                emissive:0x270000,
+                shading:THREE.FlatShading // THREE.SmoothShading
+            });
+        }
 
-        // Create and position a camera
-        var camera = new THREE.PerspectiveCamera(
-                60,                                   // Field of view
-                window.innerWidth/window.innerHeight, // Aspect ratio
-                0.1,                                  // Near clipping pane
-                1000                                  // Far clipping pane
-        );
+        function getMatTwo(color){
+            // our material is a phong material, with no shininess (highlight) and a black specular
+            return new THREE.MeshStandardMaterial({
+                color:0x000000,
+//                roughness:.9,
+//                shininess:10,
+                //specular:0x000000,
+                opacity:0,
+//                emissive:0x270000,
+                shading:THREE.FlatShading // THREE.SmoothShading
+            });
+        }
+        // colors
 
-        // Reposition the camera
-        camera.position.set(0,30,50);
+        var Colors = {
+            green : 0x45bc96,
+            blue : 0x3D9ABC,
+            orange : 0x2D4DBC,
+            yellow : 0xDEE165,
+        }
 
-        // Point the camera at a given coordinate
-        camera.lookAt(new THREE.Vector3(0,15,0))
 
-        // Create a renderer
-        var renderer = new THREE.WebGLRenderer({ alpha: true });
 
-        // Size should be the same as the window
-        renderer.setSize( window.innerWidth, window.innerHeight );
+        var colorsLength = Object.keys(Colors).length;
 
-        // Set a near white clear color (default is black)
-//        renderer.setClearColor( 0xfff6e6 );
+        function getRandomColor(){
+            var colIndx = Math.floor(Math.random()*colorsLength);
+            var colorStr = Object.keys(Colors)[colIndx];
+            return Colors[colorStr];
+        }
 
-        // Enable shadow mapping
-        renderer.shadowMap.enabled = true;
-        renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        // parameters to customize the planet
+        var parameters = {
+            minRadius : 65,
+            maxRadius : 70,
+            minSpeed:.0001,
+            maxSpeed:.002,
+            particles:40,
+            minSize:2,
+            maxSize:5
+        }
 
-        // Append to the document
-        document.body.appendChild( renderer.domElement );
 
-        // Add an ambient lights
-        var ambientLight = new THREE.AmbientLight( 0xffffff, 0.2 );
-        scene.add( ambientLight );
 
-        // Add a point light that will cast shadows
-        var pointLight = new THREE.PointLight( 0xffffff, 1 );
-        pointLight.position.set( 25, 50, 25 );
-        pointLight.castShadow = true;
-        pointLight.shadow.mapSize.width = 1024;
-        pointLight.shadow.mapSize.height = 1024;
-        scene.add( pointLight );
+        // For a THREEJS project we need at least
+        // a scene
+        // a renderer
+        // a camera
+        // a light (1 or many)
+        // a mesh (an object to display)
 
-        // A basic material that shows the geometry wireframe.
-        var shadowMaterial = new THREE.ShadowMaterial( { color: 0xeeeeee } );
-        shadowMaterial.opacity = 0.5;
-        var groundMesh = new THREE.Mesh(
-                new THREE.BoxGeometry( 100, .1, 100 ),
-                shadowMaterial
-        );
-        groundMesh.receiveShadow = true;
-        scene.add( groundMesh );
+        var scene, renderer, camera, saturn, light;
 
-        // A simple geometric shape with a flat material
-        var shapeOne = new THREE.Mesh(
-                new THREE.OctahedronGeometry(10,1),
-                new THREE.MeshStandardMaterial( {
-                    color: 0x45bc96,
-                    shading: THREE.FlatShading ,
-                    metalness: 0,
-                    roughness: 0.8
-                } )
-        );
-        shapeOne.position.y += 10;
-        shapeOne.rotateZ(Math.PI/3);
-        shapeOne.castShadow = true;
-        scene.add(shapeOne);
+        var WIDTH = window.innerWidth,
+                HEIGHT = window.innerHeight;
 
-        // Add a second shape
-        var shapeTwo = new THREE.Mesh(
-                new THREE.OctahedronGeometry(5,1),
-                new THREE.MeshStandardMaterial({
-                    color: 0x45bc96,
-                    shading: THREE.FlatShading ,
-                    metalness: 0,
-                    roughness: 0.8
-                })
-        );
-        shapeTwo.position.y += 5;
-        shapeTwo.position.x += 15;
-        shapeTwo.rotateZ(Math.PI/5);
-        shapeTwo.castShadow = true;
-        scene.add(shapeTwo);
+        var controls;
 
-        // Render the scene/camera combnation
-        renderer.render(scene, camera);
+        // initialise the world
 
-        // Add an orbit control which allows us to move around the scene. See the three.js example for more details
-        // https://github.com/mrdoob/three.js/blob/dev/examples/js/controls/OrbitControls.
-        var controls = new THREE.OrbitControls( camera, renderer.domElement );
-        controls.target = new THREE.Vector3(0,15,0);
-        controls.maxPolarAngle = Math.PI / 2;
-        controls.addEventListener( 'change', function() { renderer.render(scene, camera); } ); // add this only if there is no animation loop (requestAnimationFrame)
+        function initWorld(){
+            //
+            // THE SCENE
+            //
+            scene = new THREE.Scene();
+
+            //
+            // THE CAMERA
+            //
+
+            // Perspective or Orthographic
+            // Field of view : I use 75, play with it
+            // Aspect ratio : width / height of the screen
+            // near and far plane : I usually set them at .1 and 2000
+            /*
+             camera = new THREE.PerspectiveCamera(
+             fieldOfView,
+             aspectRatio,
+             nearPlane,
+             farPlane
+             );
+             */
+            camera = new THREE.PerspectiveCamera(65, 1, .1, 2000);
+            camera.position.x = 120;
+            camera.position.y = 50;
+            camera.position.z = 90;
+            //
+            // THE RENDERER
+            //
+
+            renderer = new THREE.WebGLRenderer({
+                alpha: true,
+                antialias: true
+            });
+            renderer.setSize(WIDTH, HEIGHT);
+            renderer.shadowMap.enabled = true;
+
+            // Make the renderer use the #world div to render le scene
+
+            container = document.getElementById('world');
+            container.appendChild(renderer.domElement);
+
+            //
+            // LIGHT
+            //
+            // test these
+            // var globalLight = new THREE.HemisphereLight(skyColor, groundColor, intensity);
+            // var ambiantLight = new THREE.AmbientLight( globalColor );
+            // var pointLight = new THREE.PointLight(color, intensity, radius, decay);
+            // var directionalLight = new THREE.DirectionlLight(color, intensity);
+
+            ambientLight = new THREE.AmbientLight(0x143232,2);
+            scene.add(ambientLight);
+
+            light = new THREE.DirectionalLight(0xffffff, 1.5);
+            light.position.set(100,100,100);
+            light.castShadow = false;
+            light.shadow.camera.left = -100;
+            light.shadow.camera.right = 400;
+            light.shadow.camera.top = 200;
+            light.shadow.camera.bottom = -400;
+            light.shadow.camera.near = 1;
+            light.shadow.camera.far = 1000;
+            light.shadow.mapSize.width = 2048;
+            light.shadow.mapSize.height = 2048;
+
+
+            scene.add(light);
+
+
+            //
+            // CONTROLS
+            // used to rotate around the scene with the mouse
+            // you can drag to rotate, scroll to zoom
+            //
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+            //
+            // HANDLE SCREEN RESIZE
+            //
+            window.addEventListener('resize', handleWindowResize, false);
+
+            //
+            // CREATE THE OBJECT
+            //
+            /*
+             var cubeGeom = new THREE.SphereGeometry(20,10,10);
+             var matGeom = new THREE.MeshPhongMaterial({color:0xff0000, shading:THREE.FlatShading});
+             cube = new THREE.Mesh(cubeGeom, matGeom);
+             scene.add(cube);
+             */
+
+            saturn = new Saturn();
+            saturn.mesh.rotation.x = .6;
+            saturn.mesh.rotation.z = .4;
+            scene.add(saturn.mesh);
+
+            // START THE LOOP
+            loop();
+
+        }
+
+        var Saturn = function(){
+            //
+            // CREATE A MESH
+            //
+            // A Mesh = Geometry + Material
+            // A mesh must be added to the scene to be rendered
+            // var mesh = new THREE.Mesh(geometry, material);
+            // scene.add(mesh);
+
+            // to create Saturn, we need
+            // - a mesh for the planet
+            // - a mesh for the ring
+            // - a mesh that holds the planet and the ring
+
+            // the geometry of the planet is a tetrahedron
+            var geomPlanet = new THREE.BoxGeometry(.1,.1,.1);
+
+            // The shape of the planet is too perfect for my taste
+            // let's manipulate the geometry and move the vertices randomly
+            // to make it look like a rock
+
+//            var noise = 5;
+//            for(var i=0; i<geomPlanet.vertices.length; i++){
+//                var v = geomPlanet.vertices[i];
+//                v.x += -noise/2 + Math.random()*noise;
+//                v.y += -noise/2 + Math.random()*noise;
+//                v.z += -noise/2 + Math.random()*noise;
+//            }
+
+            // create a new material for the planet
+            var matPlanet = getMatTwo(Colors.orange);
+
+//            var matPlanet = new THREE.Mesh(
+//                    new THREE.MeshStandardMaterial( {
+//                        color: 0x0b8450,
+//                        shading: THREE.FlatShading ,
+//                        metalness: 0,
+//                        roughness: 0.8,
+//                        refractionRatio: 0.25,
+//                        opacity: .3
+//                    } )
+//            );
+
+//            var matPlanet = THREE.MeshStandardMaterial({
+//                colors: 0x45bc96,
+//                opacity: .6
+//            });
+
+            // create the mesh of the planet
+            this.planet = new THREE.Mesh(geomPlanet, matPlanet);
+
+            this.ring = new THREE.Mesh();
+            this.nParticles = 0;
+
+            // create the particles to populate the ring
+            this.updateParticlesCount();
+
+            // Create a global mesh to hold the planet and the ring
+
+            this.mesh = new THREE.Object3D();
+            this.mesh.add(this.planet);
+            this.mesh.add(this.ring);
+
+            this.planet.castShadow = true;
+            this.planet.receiveShadow = true;
+
+            // update the position of the particles => must be moved to the loop
+            this.updateParticlesRotation();
+        }
+
+        Saturn.prototype.updateParticlesCount = function(){
+
+
+            if (this.nParticles < parameters.particles){
+
+                // Remove particles
+
+                for (var i=this.nParticles; i< parameters.particles; i++){
+                    var p = new Particle();
+                    p.mesh.rotation.x = Math.random()*Math.PI;
+                    p.mesh.rotation.y = Math.random()*Math.PI;
+                    p.mesh.position.y = -2 + Math.random()*4;
+                    this.ring.add(p.mesh);
+                }
+            }else{
+
+                // add particles
+
+                while(this.nParticles > parameters.particles){
+                    var m = this.ring.children[this.nParticles-1];
+                    this.ring.remove(m);
+                    m.userData.po = null;
+                    this.nParticles--;
+                }
+            }
+            this.nParticles = parameters.particles;
+
+            // We will give a specific angle to each particle
+            // to cover the whole ring we need to
+            // dispatch them regularly
+            this.angleStep = Math.PI*2/this.nParticles;
+            this.updateParticlesDefiniton();
+        }
+
+        // Update particles definition
+        Saturn.prototype.updateParticlesDefiniton = function(){
+
+            for(var i=0; i<this.nParticles; i++){
+                var m = this.ring.children[i];
+                var s = parameters.minSize + Math.random()*(parameters.maxSize - parameters.minSize);
+                m.scale.set(s,s,s);
+
+                // set a random distance
+                m.userData.distance = parameters.minRadius +  Math.random()*(parameters.maxRadius-parameters.minRadius);
+
+                // give a unique angle to each particle
+                m.userData.angle = this.angleStep*i;
+                // set a speed proportionally to the distance
+                m.userData.angularSpeed = rule3(m.userData.distance,parameters.minRadius,parameters.maxRadius,parameters.minSpeed, parameters.maxSpeed);
+            }
+        }
+
+        var Particle = function(){
+            // Size of the particle, make it random
+            var s = 1;
+
+            // geometry of the particle, choose between different shapes
+            var geom,
+                    random = Math.random();
+
+            if (random<.25){
+                // Cube
+                geom = new THREE.BoxGeometry(s,s,s);
+
+            }else if (random < .5){
+                // Pyramid
+                geom = new THREE.BoxGeometry(0,s,s*2, 4);
+
+            }else if (random < .75){
+                // potato shape
+                geom = new THREE.BoxGeometry(s,2, s+2);
+
+            }else{
+                // thick plane
+                geom = new THREE.BoxGeometry(s/6,s,s); // thick plane
+            }
+            // color of the particle, make it random and get a material
+            var color = getRandomColor();
+            var mat = getMat(color);
+
+            // create the mesh of the particle
+            this.mesh = new THREE.Mesh(geom, mat);
+            this.mesh.receiveShadow = true;
+            this.mesh.castShadow = true;
+            this.mesh.userData.po = this;
+        }
+
+
+        // Update particles position
+        Saturn.prototype.updateParticlesRotation = function(){
+
+            // increase the rotation of each particle
+            // and update its position
+
+            for(var i=0; i<this.nParticles; i++){
+                var m = this.ring.children[i];
+                // increase the rotation angle around the planet
+                m.userData.angle += m.userData.angularSpeed;
+
+                // calculate the new position
+                var posX = Math.cos(m.userData.angle)*m.userData.distance;
+                var posZ = Math.sin(m.userData.angle)*m.userData.distance;
+                m.position.x = posX;
+                m.position.z = posZ;
+
+                //*
+                // add a local rotation to the particle
+                m.rotation.x += Math.random()*.01;
+                m.rotation.y += Math.random()*.01;
+                m.rotation.z += Math.random()*.01;
+                //*/
+            }
+        }
+
+
+        function loop(){
+
+            //
+            // Life is about movement, make the cube rotate
+            // increase the rotation by a small amount in each frame
+            //cube.rotation.z +=.01;
+            //cube.rotation.x +=.05;
+            saturn.planet.rotation.y-=.01;
+            saturn.updateParticlesRotation();
+            //
+            // RENDER !
+            //
+            renderer.render(scene, camera);
+
+            //
+            // REQUEST A NEW FRAME
+            //
+            requestAnimationFrame(loop);
+        }
+
+        function handleWindowResize() {
+            // Recalculate Width and Height as they had changed
+            HEIGHT = window.innerHeight;
+            WIDTH = window.innerWidth;
+
+            // Update the renderer and the camera
+            renderer.setSize(WIDTH, HEIGHT);
+            camera.aspect = WIDTH / HEIGHT;
+            camera.updateProjectionMatrix();
+        }
+
+        initWorld();
+
+
+        function rule3(v,vmin,vmax,tmin, tmax){
+            var nv = Math.max(Math.min(v,vmax), vmin);
+            var dv = vmax-vmin;
+            var pc = (nv-vmin)/dv;
+            var dt = tmax-tmin;
+            var tv = tmin + (pc*dt);
+            return tv;
+
+        }
 
 
     </script>
@@ -278,7 +586,7 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll " href="#page-top">
-                    <span class="light">DJ Walsh Developer/Designer</span>
+                    <span class="light">DJ Walsh - Web Developer</span>
                 </a>
             </div>
 
@@ -316,12 +624,13 @@
     <div class="intro">
         <div class="intro-body" >
             <div class="container-fluid">
-                <div class="row prallax-window" data-parallax="scroll" data-image-src="img/dylan-walsh-background-circles2.png">
-                    <div class="col-sm-6 col-md-offset-3">
-                        <h1 class="brand-heading retroshadow">Dylan J Walsh</h1>
-                        <p class="intro-text babyshadow">Web Developer & Designer</p>
+                <!--<div class="row parallax-window" data-parallax="scroll" data-image-src="img/dylan-walsh-background-circles2.png">-->
+                <div class="row">
+                    <div class="col-sm-6 col-md-offset-3 text-center">
+                        <h1 class="brand-heading babyshadow">Dylan Joseph Walsh</h1>
+                        <p class="intro-text">Full Stack Web Developer</p>
                         <a href="#about" class="btn btn-circle page-scroll">
-                            <i class="fa fa-chevron-down animated retroshadow"></i>
+                            <i class="fa fa-chevron-down animated"></i>
                             <!--<canvas style="display:none" id="canvas3" width="570" height="570"></canvas>-->
                             <!--<canvas id="canvas2" width="570" height="570">*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>-->
                         </a>
@@ -339,7 +648,7 @@
             </div>
             <div class="col-sm-6 text-left">
                 <br> <br>
-                <h4> Creation and Ideation</h4>
+                <h3> Ideation + Creation</h3>
                     <p>
                     Here it is: the one-stop shop for all your web development needs.
                     <br> <br>
@@ -352,8 +661,8 @@
 
             </div>
             <div class="col-sm-6 center-block">
-                <img class="profilePic" src="img/dylan-walsh-background-circles2.png" alt="dylan walsh web design development tech">
-                <img class="skillSet" src="img/skillset_icons.png" alt="dylan walsh web skills icons">
+                <!--<img class="profilePic" src="img/dylan-walsh-background-circles2.png" alt="dylan walsh web design development tech">-->
+                <!--<img class="skillSet" src="img/skillset_icons.png" alt="dylan walsh web skills icons">-->
             </div>
             </div>
         <!--<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
@@ -412,7 +721,7 @@
                             <br>
                             <br>
                             <div class="row">
-                                <div class="col-md-12 pull-left" style="margin-left: 1%;">
+                                <div class="col-md-12 pull-left">
                                     <p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.
                                         Primarily responsible for the Front-End asset presentation, worked with
                                         a designer and a back-end developer in an agile work environment to produce
@@ -450,7 +759,7 @@
                             <br>
                             <br>
                             <div class="row">
-                                <div class="col-md-12 pull-left" style="margin-left: 1%;">
+                                <div class="col-md-12 pull-left">
                                     <p> Built site in conjunction with consulting on the overall rebranding initiative
                                         including production of new logo, copy, and brand colors. All work was completed
                                         within the framework of strict fiduciary responsibilities associated with the
@@ -486,7 +795,7 @@
                             <br>
                             <br>
                             <div class="row">
-                                <div class="col-md-12 pull-left" style="margin-left: 1%;">
+                                <div class="col-md-12 pull-left">
                                     <p> Joined when project was 70% completed as a ringer to finish what other
                                         developers started, requiring a keen ability to learn others' code quickly and build
                                         off it with efficiency and rigor. Created a late game style guide to ensure
