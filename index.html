@@ -51,7 +51,7 @@
 
     <!-- JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/three.js"></script>
+    <script src="js/three.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery.easings.min.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
@@ -62,13 +62,12 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 <div id="world"></div>
-<script src="js/three.min.js"></script>
 <script src="js/OrbitControls.js"></script>
     <script>
         function getMat(color){
             // our material is a phong material, with no shininess (highlight) and a black specular
             return new THREE.MeshStandardMaterial({
-                color:0x45BC96,
+                color:0x689eff,
                 roughness:.9,
                 shininess:10,
                 //specular:0x000000,
@@ -115,7 +114,7 @@
             maxRadius : 70,
             minSpeed:.0001,
             maxSpeed:.002,
-            particles:49,
+            particles:59,
             minSize:2,
             maxSize:5
         }
@@ -160,7 +159,7 @@
              farPlane
              );
              */
-            camera = new THREE.PerspectiveCamera(25, 1, .1, 2000);
+            camera = new THREE.PerspectiveCamera(25, 1, .1, 3000);
             camera.position.x = 120;
             camera.position.y = 50;
             camera.position.z = 90;
@@ -214,6 +213,7 @@
             // you can drag to rotate, scroll to zoom
             //
             controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enabled = false;
 
             //
             // HANDLE SCREEN RESIZE
@@ -376,15 +376,15 @@
 
             }else if (random < .5){
                 // Pyramid
-                geom = new THREE.BoxGeometry(0,s,s*2, 4);
+                geom = new THREE.BoxGeometry(.5,s,s*1.5, 3);
 
             }else if (random < .75){
                 // potato shape
-                geom = new THREE.BoxGeometry(s,2, s+2);
+                geom = new THREE.BoxGeometry(s, 2, s+2);
 
             }else{
                 // thick plane
-                geom = new THREE.BoxGeometry(s/6,s,s); // thick plane
+                geom = new THREE.BoxGeometry(s/3,s,s);
             }
             // color of the particle, make it random and get a material
             var color = getRandomColor();
@@ -474,13 +474,13 @@
 
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="container largeScreenNav">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll " href="#page-top">
-                    <span class="light">DJ Walsh - Web Developer</span>
+                    <span class="light">DJ Walsh Web Developer</span>
                 </a>
             </div>
 
@@ -492,14 +492,14 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about"><span>About</span></a>
+                        <a class="page-scroll hamburgerMenu" href="#about"><span>About</span></a>
 
                     </li>
                     <li>
-                        <a class="page-scroll" href="#works"><span>Works</span></a>
+                        <a class="page-scroll hamburgerMenu" href="#works"><span>Works</span></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact"><span>Contact</span></a>
+                        <a class="page-scroll hamburgerMenu" href="#contact"><span>Contact</span></a>
                     </li>
                 </ul>
             </div>
@@ -520,13 +520,11 @@
             <div class="container-fluid">
                 <!--<div class="row parallax-window" data-parallax="scroll" data-image-src="img/dylan-walsh-background-circles2.png">-->
                 <div class="row">
-                    <div class="col-sm-6 col-md-offset-3 text-center">
+                    <div class="col-sm-6 col-sm-offset-3 text-center">
                         <h1 class="brand-heading babyshadow">Dylan Joseph Walsh</h1>
                         <p class="intro-text">Full Stack Web Developer</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-chevron-down animated"></i>
-                            <!--<canvas style="display:none" id="canvas3" width="570" height="570"></canvas>-->
-                            <!--<canvas id="canvas2" width="570" height="570">*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>-->
                         </a>
                     </div>
                 </div>
@@ -555,161 +553,283 @@
 
             </div>
             <div class="col-sm-6 center-block">
-                <!--<img class="profilePic" src="img/dylan-walsh-background-circles2.png" alt="dylan walsh web design development tech">-->
-                <!--<img class="skillSet" src="img/skillset_icons.png" alt="dylan walsh web skills icons">-->
-            </div>
-            </div>
-        <!--<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">-->
-        <!--<div class="modal-dialog">-->
-        <!--<div class="modal-content">-->
-        <!--<div class="modal-body">-->
-        <!--<img src="img/dwalshresume.jpg" class="img-responsive">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-        <!--<div id="imageBox" class="container center-block" style="position: relative">-->
-
-        <!--<img data-toggle="modal" data-target="#myModal" class="img-responsive imageOne image" src="img/djwcv_whitebg.png" alt="DJ Walsh's Resume">-->
-        <!--<img class="img-responsive imageTwo image" src="img/djwcv_shadow.png" alt="DJ Walsh's Resume's spooky shadow">-->
-        <!--<img id="clickMe" class="img-responsive imageThree image pull-right" src="img/clickme.png" alt="Clickability Realized">-->
-
-    </section>
-
-    <!-- Works Section -->
-    <section class="content-section text-center">
-        <div id="works" class="works-section">
-            <div class="container">
-
-                    <div class="col-lg-12">
-
-                        <div>
-                            <!--<img src="img/clicker.png" id="clicker">-->
-                            <span style="padding-bottom: 0em;"><h1>My Work</h1></span>
-                            <h4>Selected Examples </h4>
-                            <h2><span class="clickerDirections">Click Previews</span> for Details</h2>
-                        </div>
-
-                    </div>
-
-                <div class="container col-lg-12 text-center">
-                    <div id="surrealBox" class="flip-container col-md-offset-2 col-md-4">
-                        <div class="front">
-                            <img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal Eyewear Header">
-                        </div>
-                        <div class="back text-center">
-                            <img class="img-responsive" src="img/portfolio_surreal_header.png" alt="Surreal Eyewear Header">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3>Client: <span class="backTitle">Surreal Eyewear</span></h3>
-                                    <h3>Role: <span class="backTitle2">Front-End Developer</span></h3>
-                                    <h3>Team: <span class="backTitle">3</span></h3>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <h3>Relevant Skillset:</h3>
-                                    <img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">
-
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12 pull-left">
-                                    <p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.
-                                        Primarily responsible for the Front-End asset presentation, worked with
-                                        a designer and a back-end developer in an agile work environment to produce
-                                        this sharp, distinct presentation.
-
-
-                                    </p>
-                                </div>
-                            </div>
-
-                            <a href="http://surrealeyewear.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container col-lg-12 text-center">
-                    <div id="swanBox" class="flip-container col-md-offset-2 col-md-4">
-                        <div class="front">
-                            <img class="img-responsive" src="img/swan_tour.gif" alt="Swan Asset Management">
-                        </div>
-                        <div class="back text-center">
-                            <img class="img-responsive" src="img/portfolio_swan_header.png" alt="Swan Asset Management Header">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3>Client: <span class="backTitle">Swan AM</span></h3>
-                                    <h3>Role: <span class="backTitle2">Developer/Designer</span></h3>
-                                    <h3>Team: <span class="backTitle">2</span></h3>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <h3>Relevant Skillset:</h3>
-                                    <img class="img-responsive" src="img/swan_skillset.png" alt="Swan Asset Management Skillset">
-
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12 pull-left">
-                                    <p> Built site in conjunction with consulting on the overall rebranding initiative
-                                        including production of new logo, copy, and brand colors. All work was completed
-                                        within the framework of strict fiduciary responsibilities associated with the
-                                        industry—requiring nuance and expert communication with the client.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <a href="" target="_blank" class="btn btn-default btn-lg visitButton">Site Live Soon</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container col-lg-12 text-center">
-                    <div id="salonBox" class="flip-container col-md-offset-2 col-md-4">
-                        <div class="front">
-                            <img class="img-responsive" src="img/salonpass_tour.gif" alt="SalonandSpaPass">
-                        </div>
-                        <div class="back text-center">
-                            <img class="img-responsive" src="img/portfolio_salonpass_header.png" alt="Salon and Spa Pass Header">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <h3>Client: <span class="backTitle">Salon & Spa Pass</span></h3>
-                                    <h3>Role: <span class="backTitle2">Wordpress Developer</span></h3>
-                                    <h3>Team: <span class="backTitle">1</span></h3>
-                                </div>
-                                <div class="col-md-6 text-center">
-                                    <h3>Relevant Skillset:</h3>
-                                    <img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">
-
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-12 pull-left">
-                                    <p> Joined when project was 70% completed as a ringer to finish what other
-                                        developers started, requiring a keen ability to learn others' code quickly and build
-                                        off it with efficiency and rigor. Created a late game style guide to ensure
-                                        consistent polish across the site and implemented various UX changes to grab
-                                        new users for this promising start-up.
-
-
-                                    </p>
-                                </div>
-                            </div>
-                            <a href="http://salonandspapass.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>
-                        </div>
-                    </div>
-                </div>
-
+                <br> <br>
+                <h3> Ideation + Creation</h3>
+                <p>
+                    Here it is: the one-stop shop for all your web development needs.
+                    <br> <br>
+                    Highly literate in HTML5, CSS3, JS/JQuery, Sass, Ruby, CMS, Angular, and more.
+                    <br> <br>
+                    <a class="page-scroll" href="#contact">Reach out</a> to see how we can team up to produce great work.
+                    <br> <br>
+                    Based in Brooklyn, NYC
+                </p>
 
             </div>
         </div>
-
     </section>
+
+<section id="works" class="container content-section text-center works-section">
+        <div class="row">
+            <div class="col-lg-12">
+                <div>
+                    <span style="padding-bottom: 0em;"><h1>My Work</h1></span>
+                    <h4>Selected Examples </h4>
+                    <h2><span class="clickerDirections desktop">Click</span> for Details</h2>
+                    <h2><span class="clickerDirections mobile">Tap</span> for Details</h2>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div id="surrealBox" class="flip-container col-sm-offset-3 col-sm-6">
+                <div class="front">
+                    <img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal Eyewear Header">
+                </div>
+                <div class="back text-center">
+                    <img class="img-responsive" src="img/portfolio_surreal_header.png" alt="Surreal Eyewear Header">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Client: <span class="backTitle">Surreal Eyewear</span></h3>
+                            <h3>Role: <span class="backTitle2">Front-End Developer</span></h3>
+                            <h3>Team: <span class="backTitle">3</span></h3>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <h3>Relevant Skillset:</h3>
+                            <img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">
+
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12 pull-left">
+                            <p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.
+                                Primarily responsible for the Front-End asset presentation, worked with
+                                a designer and a back-end developer in an agile work environment to produce
+                                this sharp, distinct presentation.
+
+
+                            </p>
+                        </div>
+                    </div>
+                    <a href="http://surrealeyewear.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+                <div id="swanBox" class="flip-container col-sm-offset-3 col-sm-6">
+                    <div class="front">
+                        <img class="img-responsive" src="img/swan_tour.gif" alt="Swan Asset Management">
+                    </div>
+                    <div class="back text-center">
+                        <img class="img-responsive" src="img/portfolio_swan_header.png" alt="Swan Asset Management Header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Client: <span class="backTitle">Swan AM</span></h3>
+                                <h3>Role: <span class="backTitle2">Developer/Designer</span></h3>
+                                <h3>Team: <span class="backTitle">2</span></h3>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h3>Relevant Skillset:</h3>
+                                <img class="img-responsive" src="img/swan_skillset.png" alt="Swan Asset Management Skillset">
+
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12 pull-left">
+                                <p> Built site in conjunction with consulting on the overall rebranding initiative
+                                    including production of new logo, copy, and brand colors. All work was completed
+                                    within the framework of strict fiduciary responsibilities associated with the
+                                    industry—requiring nuance and expert communication with the client.
+                                </p>
+                            </div>
+                        </div>
+
+                        <a href="" target="_blank" class="btn btn-default btn-lg visitButton">Site Live Soon</a>
+                    </div>
+                </div>
+
+        </div>
+
+        <div class="row">
+
+                <div id="salonBox" class="flip-container col-sm-offset-3 col-sm-6">
+                    <div class="front">
+                        <img class="img-responsive" src="img/salonpass_tour.gif" alt="SalonandSpaPass">
+                    </div>
+                    <div class="back text-center">
+                        <img class="img-responsive" src="img/portfolio_salonpass_header.png" alt="Salon and Spa Pass Header">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Client: <span class="backTitle">Salon & Spa Pass</span></h3>
+                                <h3>Role: <span class="backTitle2">Wordpress Developer</span></h3>
+                                <h3>Team: <span class="backTitle">1</span></h3>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <h3>Relevant Skillset:</h3>
+                                <img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">
+
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-12 pull-left">
+                                <p> Joined when project was 70% completed as a ringer to finish what other
+                                    developers started, requiring a keen ability to learn others' code quickly and build
+                                    off it with efficiency and rigor. Created a late game style guide to ensure
+                                    consistent polish across the site and implemented various UX changes to grab
+                                    new users for this promising start-up.
+
+
+                                </p>
+                            </div>
+                        </div>
+                        <a href="http://salonandspapass.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>
+                    </div>
+                </div>
+
+        </div>
+</section>
+    <!-- Works Section -->
+    <!--<section class="content-section text-center">-->
+        <!--<div id="works" class="works-section">-->
+            <!--<div class="container">-->
+                    <!--<div class="col-lg-12">-->
+                        <!--<div>-->
+                            <!--<span style="padding-bottom: 0em;"><h1>My Work</h1></span>-->
+                            <!--<h4>Selected Examples </h4>-->
+                            <!--<h2><span class="clickerDirections desktop">Click</span> for Details</h2>-->
+                            <!--<h2><span class="clickerDirections mobile">Tap</span> for Details</h2>-->
+
+                        <!--</div>-->
+                    <!--</div>-->
+
+                <!--<div class="container col-lg-12 text-center">-->
+
+                        <!--<div id="surrealBox" class="flip-container col-sm-offset-2 col-lg-4">-->
+                            <!--<div class="front">-->
+                                <!--<img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal Eyewear Header">-->
+                            <!--</div>-->
+                            <!--<div class="back text-center">-->
+                                <!--<img class="img-responsive" src="img/portfolio_surreal_header.png" alt="Surreal Eyewear Header">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-6">-->
+                                        <!--<h3>Client: <span class="backTitle">Surreal Eyewear</span></h3>-->
+                                        <!--<h3>Role: <span class="backTitle2">Front-End Developer</span></h3>-->
+                                        <!--<h3>Team: <span class="backTitle">3</span></h3>-->
+                                    <!--</div>-->
+                                    <!--<div class="col-md-6 text-center">-->
+                                        <!--<h3>Relevant Skillset:</h3>-->
+                                        <!--<img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">-->
+
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<br>-->
+                                <!--<br>-->
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-12 pull-left">-->
+                                        <!--<p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.-->
+                                            <!--Primarily responsible for the Front-End asset presentation, worked with-->
+                                            <!--a designer and a back-end developer in an agile work environment to produce-->
+                                            <!--this sharp, distinct presentation.-->
+
+
+                                        <!--</p>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<a href="http://surrealeyewear.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+
+                <!--</div>-->
+
+                <!--<div class="container col-lg-12 text-center">-->
+                    <!--<div id="swanBox" class="flip-container col-md-offset-2 col-md-4">-->
+                        <!--<div class="front">-->
+                            <!--<img class="img-responsive" src="img/swan_tour.gif" alt="Swan Asset Management">-->
+                        <!--</div>-->
+                        <!--<div class="back text-center">-->
+                            <!--<img class="img-responsive" src="img/portfolio_swan_header.png" alt="Swan Asset Management Header">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<h3>Client: <span class="backTitle">Swan AM</span></h3>-->
+                                    <!--<h3>Role: <span class="backTitle2">Developer/Designer</span></h3>-->
+                                    <!--<h3>Team: <span class="backTitle">2</span></h3>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-6 text-center">-->
+                                    <!--<h3>Relevant Skillset:</h3>-->
+                                    <!--<img class="img-responsive" src="img/swan_skillset.png" alt="Swan Asset Management Skillset">-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<br>-->
+                            <!--<br>-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-12 pull-left">-->
+                                    <!--<p> Built site in conjunction with consulting on the overall rebranding initiative-->
+                                        <!--including production of new logo, copy, and brand colors. All work was completed-->
+                                        <!--within the framework of strict fiduciary responsibilities associated with the-->
+                                        <!--industry—requiring nuance and expert communication with the client.-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                            <!--<a href="" target="_blank" class="btn btn-default btn-lg visitButton">Site Live Soon</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="container col-lg-12 text-center">-->
+                    <!--<div id="salonBox" class="flip-container col-md-offset-2 col-md-4">-->
+                        <!--<div class="front">-->
+                            <!--<img class="img-responsive" src="img/salonpass_tour.gif" alt="SalonandSpaPass">-->
+                        <!--</div>-->
+                        <!--<div class="back text-center">-->
+                            <!--<img class="img-responsive" src="img/portfolio_salonpass_header.png" alt="Salon and Spa Pass Header">-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-6">-->
+                                    <!--<h3>Client: <span class="backTitle">Salon & Spa Pass</span></h3>-->
+                                    <!--<h3>Role: <span class="backTitle2">Wordpress Developer</span></h3>-->
+                                    <!--<h3>Team: <span class="backTitle">1</span></h3>-->
+                                <!--</div>-->
+                                <!--<div class="col-md-6 text-center">-->
+                                    <!--<h3>Relevant Skillset:</h3>-->
+                                    <!--<img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">-->
+
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<br>-->
+                            <!--<br>-->
+                            <!--<div class="row">-->
+                                <!--<div class="col-md-12 pull-left">-->
+                                    <!--<p> Joined when project was 70% completed as a ringer to finish what other-->
+                                        <!--developers started, requiring a keen ability to learn others' code quickly and build-->
+                                        <!--off it with efficiency and rigor. Created a late game style guide to ensure-->
+                                        <!--consistent polish across the site and implemented various UX changes to grab-->
+                                        <!--new users for this promising start-up.-->
+
+
+                                    <!--</p>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<a href="http://salonandspapass.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+
+            <!--</div>-->
+        <!--</div>-->
+
+    <!--</section>-->
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
@@ -719,7 +839,7 @@
                 <br>
                 <br>
                 <br>
-                <h2 id="emailLink">Reach out via email: <a class="emailMe" href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a></h2>
+                <h2 id="emailLink">Reach out via email: </h2><a class="emailMe" href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a>
                 <p>So many possibilities</p>
                 <br>
                 <ul class="list-inline banner-social-buttons">
