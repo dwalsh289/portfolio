@@ -292,6 +292,10 @@ a:focus {
   /*color: #ec01a6;*/
 }
 
+.nav > li > a {
+  padding-right: 11px;
+}
+
 .back, h3 {
   margin-bottom: 4px;
 }
