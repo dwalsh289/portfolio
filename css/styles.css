@@ -47,6 +47,10 @@
   font-size: 1.25em;
 }
 
+#about .row .col-sm-6 p:first-child {
+  margin-top: 4em;
+}
+
 #about a {
   background-color: transparent;
   color: #3b3b3b !important;
@@ -66,37 +70,42 @@
 }
 
 #about img {
-  width: 75%;
-  height: auto;
-  dispay: block;
+  /*width: 75%;*/
+  /*height: auto;*/
+  display: block;
   margin: auto;
 }
 
+.skills {
+  /*text-align: left !important;*/
+}
+
 .skillHeader {
-  text-align: center;
   display: inline-block;
   color: #f8f8f8;
   background-color: #3b3b3b;
-  padding: 3px 7px 1px 7px;
+  padding: 4px 7px 1px 7px;
   border-radius: 2px;
 }
 
-#about .text-center a {
-  background-color: #79b0ff !important;
-  border: none;
-  color: #f8f8f8 !important;
-  padding: 5px 5px 3px 5px;
-}
-
-#about .text-center a:hover {
+#about .aboutFooter a {
+  font-size: 2em;
+  border-left: 2px solid #79b0ff;
   color: #79b0ff !important;
   background-color: transparent !important;
-  border: none;
-  padding: 5px 5px 3px 5px;
+  padding: 7px 12px 3px 12px;
+}
+
+#about .aboutFooter a:hover {
+  background-color: #79b0ff !important;
+  border-left: 2px solid #79b0ff;
+  color: #f8f8f8 !important;
+  padding: 7px 12px 3px 12px;
 }
 
 .aboutFooter {
-  padding-top: 6em;
+  margin-top: 4em;
+  margin-bottom: 4em;
 }
 
 .skills {
@@ -584,7 +593,6 @@ a:focus {
 }
 .btn-default {
   border: 2px solid #3b3b3b;
-  /*color: #ffe46e;*/
   color: #3b3b3b;
   background-color: transparent;
 }
