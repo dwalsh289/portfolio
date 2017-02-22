@@ -1,22 +1,24 @@
 $(document).ready(function() {
+    // for responsiveness
+    checkSize();
 
-    // initializes the fullpage.js framework
+    $(window).resize(checkSize);
 
-    $('#fullpage').fullpage();
-
-
-//flip effect//
+    //flip effect//
     $('.flip-container').click(function (e) {
         $(this).toggleClass('flipped');
-    });
-
-    $('.flip-containerTwo').click(function (e) {
-        $(this).toggleClass('flipped');
+        $(".clubOverlay").fadeOut();
     });
 
 
 });
 
+//Function to the css rule
+function checkSize(){
+    if ($(".sampleClass").css("float") == "none" ){
+        // your code here
+    }
+}
 
 
 

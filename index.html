@@ -51,7 +51,7 @@
 
     <!-- JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <!--<script src="js/three.min.js"></script>-->
+    <script src="js/three.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery.easings.min.js"></script>
     <script type="text/javascript" src="js/jquery.fullPage.min.js"></script>
@@ -521,7 +521,7 @@
                 <!--<div class="row parallax-window" data-parallax="scroll" data-image-src="img/dylan-walsh-background-circles2.png">-->
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3 text-center">
-                        <h1 class="brand-heading babyshadow">Dylan Joseph Walsh</h1>
+                        <h1 class="brand-heading">Dylan Joseph Walsh</h1>
                         <p class="intro-text">Full Stack Web Developer</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-chevron-down animated"></i>
@@ -538,45 +538,38 @@
             <div class="col-lg-12 text-center">
                 <h1>About</h1>
             </div>
-            <div class="col-sm-6 text-left">
-                <br> <br>
-                <h3> Ideation + Creation</h3>
-                    <p>
-                    Here it is: the one-stop shop for all your web development needs.
-                    <br> <br>
-                    Highly literate in HTML5, CSS3, JS/JQuery, Sass, Ruby, CMS, Angular, and more.
-                    <br> <br>
-                    <a class="page-scroll" href="#contact">Reach out</a> to see how we can team up to produce great work.
-                    <br> <br>
-                    Based in Brooklyn, NYC
-                </p>
-
+            <div style="text-align: center;" class="col-sm-6 center-block">
+                <!--<h3 class="text-center">Skillset</h3>-->
+                <p class="skills"> Fully versed in technologies associated with the highest standards of creating actionable and beautiful websites.
+                 <br>[List is not comprehensive.]</p>
+                <p class="skillHeader"> The Basics:</p>
+                <p class="skills"> <a>HTML5</a> <a>CSS3</a> <a>JS/JQuery</a> <a>Sass</a> <a>Angular</a> <a>Node</a></p>
+                <p class="skillHeader"> Js Libraries:</p>
+                <p class="skills"> <a>Three.js</a> <a>Paper.js</a> <a>Fabric.js</a></p>
+                <p class="skillHeader"> Design:</p>
+                <p class="skills"> <a>Photoshop</a> <a>Sketch</a></p>
+                <p class="skillHeader"> Extras:</p>
+                <p class="skills"> <a>Ruby</a> <a>Magento</a> <a>Electron</a></p>
             </div>
-            <div class="col-sm-6 center-block">
-                <br> <br>
-                <h3> Ideation + Creation</h3>
-                <p>
-                    Here it is: the one-stop shop for all your web development needs.
-                    <br> <br>
-                    Highly literate in HTML5, CSS3, JS/JQuery, Sass, Ruby, CMS, Angular, and more.
-                    <br> <br>
-                    <a class="page-scroll" href="#contact">Reach out</a> to see how we can team up to produce great work.
-                    <br> <br>
-                    Based in Brooklyn, NYC
-                </p>
-
+            <div class="col-sm-6 text-left">
+                <!--<h3 class="text-center">Developer</h3>-->
+                <img class="img-responsive" src="img/dylan-joseph-walsh-low-poly-face.png" alt="dylan joseph walsh web developer">
             </div>
         </div>
+
+            <div class="aboutFooter col-lg-12 text-center">
+                <p><a class="page-scroll aboutFooter" href="#contact">Reach out</a> to see how we can team up to produce great work.</p>
+            </div>
     </section>
 
-<section id="works" class="container content-section text-center works-section">
+<section class="container content-section text-center works-section">
         <div class="row">
-            <div class="col-lg-12">
+            <div  id="works" class="worksHeader col-lg-12">
                 <div>
-                    <span style="padding-bottom: 0em;"><h1>My Work</h1></span>
+                    <h1><span style="padding-bottom: 0;">My Work</h1></span>
                     <h4>Selected Examples </h4>
-                    <h2><span class="clickerDirections desktop">Click</span> for Details</h2>
-                    <h2><span class="clickerDirections mobile">Tap</span> for Details</h2>
+                    <h2 class="desktop"><span class="clickerDirections">Click</span> for Details</h2>
+                    <h2 class="mobile"><span class="clickerDirections">Tap</span> for Details</h2>
 
                 </div>
             </div>
@@ -586,6 +579,8 @@
 
             <div id="surrealBox" class="flip-container col-sm-offset-3 col-sm-6">
                 <div class="front">
+                    <img class=" cube1 img-responsive" src="img/cube.png" alt="Dylan Walsh Web Design 3d Cube">
+                    <h1 class="projectTitleOne">Surreal Eyewear</h1>
                     <img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal Eyewear Header">
                 </div>
                 <div class="back text-center">
@@ -602,16 +597,12 @@
 
                         </div>
                     </div>
-                    <br>
-                    <br>
                     <div class="row">
                         <div class="col-md-12 pull-left">
                             <p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.
                                 Primarily responsible for the Front-End asset presentation, worked with
                                 a designer and a back-end developer in an agile work environment to produce
                                 this sharp, distinct presentation.
-
-
                             </p>
                         </div>
                     </div>
@@ -624,6 +615,8 @@
 
                 <div id="swanBox" class="flip-container col-sm-offset-3 col-sm-6">
                     <div class="front">
+                        <h1 class="projectTitleTwo">Swan Asset <br> Management</h1>
+                        <img class="img-responsive cube2" src="img/cube3.png" alt="Dylan Walsh Web Design 3d Cube">
                         <img class="img-responsive" src="img/swan_tour.gif" alt="Swan Asset Management">
                     </div>
                     <div class="back text-center">
@@ -640,8 +633,6 @@
 
                             </div>
                         </div>
-                        <br>
-                        <br>
                         <div class="row">
                             <div class="col-md-12 pull-left">
                                 <p> Built site in conjunction with consulting on the overall rebranding initiative
@@ -662,6 +653,8 @@
 
                 <div id="salonBox" class="flip-container col-sm-offset-3 col-sm-6">
                     <div class="front">
+                        <img class="cube3 img-responsive" src="img/3d-cube2.png" alt="Dylan Walsh Web Design 3d Cube">
+                        <h1 class="projectTitleOne">Salon & Spa Pass</h1>
                         <img class="img-responsive" src="img/salonpass_tour.gif" alt="SalonandSpaPass">
                     </div>
                     <div class="back text-center">
@@ -669,7 +662,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>Client: <span class="backTitle">Salon & Spa Pass</span></h3>
-                                <h3>Role: <span class="backTitle2">Wordpress Developer</span></h3>
+                                <h3>Role: <span class="backTitle2">Wordpress Dev</span></h3>
                                 <h3>Team: <span class="backTitle">1</span></h3>
                             </div>
                             <div class="col-md-6 text-center">
@@ -678,8 +671,6 @@
 
                             </div>
                         </div>
-                        <br>
-                        <br>
                         <div class="row">
                             <div class="col-md-12 pull-left">
                                 <p> Joined when project was 70% completed as a ringer to finish what other
@@ -698,138 +689,6 @@
 
         </div>
 </section>
-    <!-- Works Section -->
-    <!--<section class="content-section text-center">-->
-        <!--<div id="works" class="works-section">-->
-            <!--<div class="container">-->
-                    <!--<div class="col-lg-12">-->
-                        <!--<div>-->
-                            <!--<span style="padding-bottom: 0em;"><h1>My Work</h1></span>-->
-                            <!--<h4>Selected Examples </h4>-->
-                            <!--<h2><span class="clickerDirections desktop">Click</span> for Details</h2>-->
-                            <!--<h2><span class="clickerDirections mobile">Tap</span> for Details</h2>-->
-
-                        <!--</div>-->
-                    <!--</div>-->
-
-                <!--<div class="container col-lg-12 text-center">-->
-
-                        <!--<div id="surrealBox" class="flip-container col-sm-offset-2 col-lg-4">-->
-                            <!--<div class="front">-->
-                                <!--<img class="img-responsive" src="img/surreal_tour.gif" alt="Surreal Eyewear Header">-->
-                            <!--</div>-->
-                            <!--<div class="back text-center">-->
-                                <!--<img class="img-responsive" src="img/portfolio_surreal_header.png" alt="Surreal Eyewear Header">-->
-                                <!--<div class="row">-->
-                                    <!--<div class="col-md-6">-->
-                                        <!--<h3>Client: <span class="backTitle">Surreal Eyewear</span></h3>-->
-                                        <!--<h3>Role: <span class="backTitle2">Front-End Developer</span></h3>-->
-                                        <!--<h3>Team: <span class="backTitle">3</span></h3>-->
-                                    <!--</div>-->
-                                    <!--<div class="col-md-6 text-center">-->
-                                        <!--<h3>Relevant Skillset:</h3>-->
-                                        <!--<img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">-->
-
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<br>-->
-                                <!--<br>-->
-                                <!--<div class="row">-->
-                                    <!--<div class="col-md-12 pull-left">-->
-                                        <!--<p> Complete redesign for SoHo eyewear boutique Surreal built in WordPress.-->
-                                            <!--Primarily responsible for the Front-End asset presentation, worked with-->
-                                            <!--a designer and a back-end developer in an agile work environment to produce-->
-                                            <!--this sharp, distinct presentation.-->
-
-
-                                        <!--</p>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<a href="http://surrealeyewear.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>-->
-                            <!--</div>-->
-                        <!--</div>-->
-
-                <!--</div>-->
-
-                <!--<div class="container col-lg-12 text-center">-->
-                    <!--<div id="swanBox" class="flip-container col-md-offset-2 col-md-4">-->
-                        <!--<div class="front">-->
-                            <!--<img class="img-responsive" src="img/swan_tour.gif" alt="Swan Asset Management">-->
-                        <!--</div>-->
-                        <!--<div class="back text-center">-->
-                            <!--<img class="img-responsive" src="img/portfolio_swan_header.png" alt="Swan Asset Management Header">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-6">-->
-                                    <!--<h3>Client: <span class="backTitle">Swan AM</span></h3>-->
-                                    <!--<h3>Role: <span class="backTitle2">Developer/Designer</span></h3>-->
-                                    <!--<h3>Team: <span class="backTitle">2</span></h3>-->
-                                <!--</div>-->
-                                <!--<div class="col-md-6 text-center">-->
-                                    <!--<h3>Relevant Skillset:</h3>-->
-                                    <!--<img class="img-responsive" src="img/swan_skillset.png" alt="Swan Asset Management Skillset">-->
-
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<br>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 pull-left">-->
-                                    <!--<p> Built site in conjunction with consulting on the overall rebranding initiative-->
-                                        <!--including production of new logo, copy, and brand colors. All work was completed-->
-                                        <!--within the framework of strict fiduciary responsibilities associated with the-->
-                                        <!--industry—requiring nuance and expert communication with the client.-->
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-
-                            <!--<a href="" target="_blank" class="btn btn-default btn-lg visitButton">Site Live Soon</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-                <!--<div class="container col-lg-12 text-center">-->
-                    <!--<div id="salonBox" class="flip-container col-md-offset-2 col-md-4">-->
-                        <!--<div class="front">-->
-                            <!--<img class="img-responsive" src="img/salonpass_tour.gif" alt="SalonandSpaPass">-->
-                        <!--</div>-->
-                        <!--<div class="back text-center">-->
-                            <!--<img class="img-responsive" src="img/portfolio_salonpass_header.png" alt="Salon and Spa Pass Header">-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-6">-->
-                                    <!--<h3>Client: <span class="backTitle">Salon & Spa Pass</span></h3>-->
-                                    <!--<h3>Role: <span class="backTitle2">Wordpress Developer</span></h3>-->
-                                    <!--<h3>Team: <span class="backTitle">1</span></h3>-->
-                                <!--</div>-->
-                                <!--<div class="col-md-6 text-center">-->
-                                    <!--<h3>Relevant Skillset:</h3>-->
-                                    <!--<img class="img-responsive" src="img/port_icon_display_surreal.png" alt="Surreal Eyewear Skillset">-->
-
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<br>-->
-                            <!--<br>-->
-                            <!--<div class="row">-->
-                                <!--<div class="col-md-12 pull-left">-->
-                                    <!--<p> Joined when project was 70% completed as a ringer to finish what other-->
-                                        <!--developers started, requiring a keen ability to learn others' code quickly and build-->
-                                        <!--off it with efficiency and rigor. Created a late game style guide to ensure-->
-                                        <!--consistent polish across the site and implemented various UX changes to grab-->
-                                        <!--new users for this promising start-up.-->
-
-
-                                    <!--</p>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<a href="http://salonandspapass.com" target="_blank" class="btn btn-default btn-lg visitButton">Visit the Site</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-
-
-            <!--</div>-->
-        <!--</div>-->
-
-    <!--</section>-->
 
     <!-- Contact Section -->
     <section id="contact" class="container content-section text-center">
@@ -839,7 +698,7 @@
                 <br>
                 <br>
                 <br>
-                <h2 id="emailLink">Reach out via email: </h2><a class="emailMe" href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a>
+                <h2 id="emailLink">Get in Touch: </h2><a class="emailMe" href="mailto:dwalsh289@gmail.com">dwalsh289@gmail.com</a>
                 <p>So many possibilities</p>
                 <br>
                 <ul class="list-inline banner-social-buttons">
@@ -848,6 +707,9 @@
                     </li>
                     <li>
                         <a href="https://plus.google.com/u/0/+DylanWalsh2/about" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/dylan-j-walsh-95703678" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw" aria-hidden="true"></i><span class="network-name">LinkedIn</span></a>
                     </li>
                 </ul>
                 <br>
