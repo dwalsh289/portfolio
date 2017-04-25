@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ac80ffd-6b07-452a-ba87-124ebfd1d45f" name="Default" comment="cleaned up files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/styles.sass" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/styles.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sass/styles.sass" />
+    <list default="true" id="7ac80ffd-6b07-452a-ba87-124ebfd1d45f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/styles.sass" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/styles.css" afterPath="$PROJECT_DIR$/css/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="portfolio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,21 +67,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+          <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/css/styles.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-90">
+                <state relative-caret-position="509">
                   <caret line="861" column="0" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="styles.sass" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/css/styles.sass">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -394,7 +379,7 @@
       <workItem from="1488990441928" duration="5454000" />
       <workItem from="1490253691018" duration="229000" />
       <workItem from="1491163930854" duration="516000" />
-      <workItem from="1492636247806" duration="4830000" />
+      <workItem from="1492636247806" duration="4879000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1468265143345</created>
@@ -662,11 +647,18 @@
       <option name="project" value="LOCAL" />
       <updated>1487788636083</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="reintroduced sass style sheet">
+      <created>1493152522487</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1493152522487</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228242000" />
+    <option name="totallyTimeSpent" value="228291000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -731,7 +723,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="color scheme implementation and myriad design edits" />
     <MESSAGE value="final edits sans responsiveness check" />
     <MESSAGE value=" final edits again (part 2)" />
     <MESSAGE value="color rescheme and attempt at responsiveness" />
@@ -756,7 +747,8 @@
     <MESSAGE value="small edits to 3d" />
     <MESSAGE value="Responsiveness" />
     <MESSAGE value="cleaned up files" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up files" />
+    <MESSAGE value="reintroduced sass style sheet" />
+    <option name="LAST_COMMIT_MESSAGE" value="reintroduced sass style sheet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1100,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
+        <state relative-caret-position="509">
           <caret line="861" column="0" selection-start-line="861" selection-start-column="0" selection-end-line="861" selection-end-column="0" />
           <folding />
         </state>
